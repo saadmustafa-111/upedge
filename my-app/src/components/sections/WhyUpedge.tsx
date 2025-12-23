@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Target, Wrench, Smartphone, Headphones } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MobileSlider } from "@/components/shared/MobileSlider";
 
 const pillars = [
   {
@@ -69,8 +70,8 @@ export function WhyUpedge() {
         </motion.div>
 
         {/* Pillars Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {pillars.map((pillar, index) => {
+        <MobileSlider
+          items={pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
               <motion.div
@@ -85,7 +86,7 @@ export function WhyUpedge() {
                   stiffness: 100,
                   damping: 15,
                 }}
-                className="relative group"
+                className="relative group h-full"
               >
                 {/* Glass Card */}
                 <div className={cn(
@@ -126,7 +127,8 @@ export function WhyUpedge() {
               </motion.div>
             );
           })}
-        </div>
+          desktopGridClassName="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+        />
       </div>
     </section>
   );

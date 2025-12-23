@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MobileSlider } from "@/components/shared/MobileSlider";
 
 const reviews = [
   {
@@ -89,8 +90,8 @@ export function Reviews() {
         </motion.div>
 
         {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-12 sm:mb-16">
-          {reviews.map((review, index) => (
+        <MobileSlider
+          items={reviews.map((review, index) => (
             <motion.div
               key={review.id}
               initial={
@@ -164,7 +165,9 @@ export function Reviews() {
               </Card>
             </motion.div>
           ))}
-        </div>
+          desktopGridClassName="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto"
+          className="mb-12 sm:mb-16"
+        />
       </div>
     </section>
   );

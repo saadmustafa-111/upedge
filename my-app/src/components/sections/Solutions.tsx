@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Home, ShoppingBag, Building2, Warehouse } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MobileSlider } from "@/components/shared/MobileSlider";
 
 const solutions = [
   {
@@ -89,8 +90,8 @@ export function Solutions() {
         </motion.div>
 
         {/* Solutions Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
-          {solutions.map((solution, index) => {
+        <MobileSlider
+          items={solutions.map((solution, index) => {
             const Icon = solution.icon;
             return (
               <motion.div
@@ -160,11 +161,16 @@ export function Solutions() {
                       <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
                   </div>
+
+                  {/* Top highlight */}
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/60 dark:via-white/30 to-transparent pointer-events-none"></div>
                 </Card>
               </motion.div>
             );
           })}
-        </div>
+          desktopGridClassName="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+          className="mb-12 sm:mb-16"
+        />
 
         {/* Bottom Callout Strip */}
         <motion.div

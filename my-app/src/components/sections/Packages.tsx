@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star, ArrowRight, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MobileSlider } from "@/components/shared/MobileSlider";
 
 const packages = [
   {
@@ -144,8 +145,8 @@ export function Packages() {
         </motion.div>
 
         {/* Package Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-12 sm:mb-16">
-          {packages.map((pkg, index) => (
+        <MobileSlider
+          items={packages.map((pkg, index) => (
             <motion.div
               key={pkg.id}
               initial={{ opacity: 0, y: 20 }}
@@ -297,7 +298,9 @@ export function Packages() {
               </Card>
             </motion.div>
           ))}
-        </div>
+          desktopGridClassName="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto"
+          className="mb-12 sm:mb-16"
+        />
 
         {/* Compare at a glance */}
         <motion.div

@@ -15,6 +15,7 @@ import {
   Send,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MobileSlider } from "@/components/shared/MobileSlider";
 import {
   CONTACT_NAME,
   EMAIL,
@@ -140,8 +141,8 @@ export function Contact() {
             </h3>
 
             {/* Contact Cards */}
-            <div className="space-y-4">
-              {contactCards.map((card, index) => {
+            <MobileSlider
+              items={contactCards.map((card, index) => {
                 const Icon = card.icon;
                 const CardWrapper = card.href ? "a" : "div";
                 const cardProps = card.href
@@ -158,6 +159,7 @@ export function Contact() {
                       duration: shouldReduceMotion ? 0.3 : 0.4,
                       delay: shouldReduceMotion ? 0 : index * 0.05,
                     }}
+                    className="h-full"
                   >
                     <CardWrapper
                       {...cardProps}
@@ -199,7 +201,9 @@ export function Contact() {
                   </motion.div>
                 );
               })}
-            </div>
+              desktopGridClassName="space-y-4"
+              showDots={false}
+            />
 
             {/* Quick Actions */}
             <div className="pt-4">
