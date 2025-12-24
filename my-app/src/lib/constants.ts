@@ -1,12 +1,16 @@
-export const SITE_NAME = "Upedge Technologies";
+export const SITE_NAME = "UpEdge Technologies";
 
-export const CONTACT_NAME = "Umair Mustafa";
-export const EMAIL = "saadtanoli445@gmail.com";
-export const PHONE = "03412041065";
-export const PHONE_DISPLAY = "+92 341 2041065";
-export const ADDRESS = "Jinnahabad, Abbottabad";
+export const CONTACT_NAME = "UpEdge Technologies";
+export const EMAIL = "upedgetech111@gmail.com";
+export const PHONE_PRIMARY = "03120518266";
+export const PHONE_SECONDARY = "03419252156";
+export const PHONE_DISPLAY_PRIMARY = "0312-0518266";
+export const PHONE_DISPLAY_SECONDARY = "0341-9252156";
+export const ADDRESS = "Abbottabad, Pakistan";
+export const FACEBOOK_PAGE = "upedgetech";
+export const GOOGLE_BUSINESS_NAME = "UpEdge Technology";
 
-export const WHATSAPP_NUMBER = "+923412041065";
+export const WHATSAPP_NUMBER = "+923120518266";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}`;
 
 export const SERVICE_AREAS = [
@@ -14,6 +18,18 @@ export const SERVICE_AREAS = [
   "Mansehra",
   "Haripur",
   "Havelian",
+];
+
+export const YEARS_EXPERIENCE = 7;
+export const PROJECTS_COMPLETED = 500;
+
+export const BRANDS = [
+  "Hikvision",
+  "UNV",
+  "IMOU",
+  "EZVIZ",
+  "Tenda",
+  "TP-Link",
 ];
 
 export const HEADER_HEIGHT = 72; // Desktop header height in pixels

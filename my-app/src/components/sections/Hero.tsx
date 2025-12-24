@@ -12,9 +12,9 @@ import { HeroBackground } from "@/components/visuals/HeroBackground";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const trustPoints = [
-  "Neat installation & proper coverage planning",
-  "Mobile viewing setup + training included",
-  "Ongoing support & maintenance options",
+  "Nearly 7 years experience · 500+ projects completed",
+  "Security, Surveillance, Networking & Solar solutions",
+  "Manufacturer-standard installations · Reliable support",
 ];
 
 // Reusable RevealText component with wipe effect
@@ -181,7 +181,7 @@ export function Hero() {
               </div>
 
               {/* Camera Image Container */}
-              <div className="relative w-full mx-auto">
+              <div className="relative w-full mx-auto mt-8">
                 {/* Glow effect */}
                 <div className="absolute inset-0 -z-10">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-cyan-500/20 dark:bg-cyan-400/10 rounded-full blur-3xl" />
@@ -196,11 +196,11 @@ export function Hero() {
                     delay: 0.6,
                     ease: [0.34, 1.56, 0.64, 1],
                   }}
-                  className="relative w-full h-[380px] sm:h-[450px]"
+                  className="relative w-full h-[350px] sm:h-[420px]"
                 >
                   <Image
-                    src="/camara1.png"
-                    alt="Professional CCTV Security Camera"
+                    src="/logod-removebg-preview.png"
+                    alt="UpEdge Technologies - Professional Security & Tech Solutions"
                     fill
                     className="object-contain drop-shadow-2xl"
                     priority
@@ -257,7 +257,7 @@ export function Hero() {
                 variant="outline" 
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-cyan-500/40 dark:border-cyan-500/40 bg-white/50 dark:bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 font-medium backdrop-blur-2xl shadow-[0_4px_20px_rgba(0,194,255,0.25),inset_0_1px_2px_rgba(255,255,255,0.5)] dark:shadow-[0_4px_20px_rgba(0,194,255,0.2),inset_0_1px_2px_rgba(255,255,255,0.1)] hover:bg-white/70 dark:hover:bg-cyan-500/20 transition-all border-2"
               >
-                Security made simple for homes & small businesses
+                Security · Surveillance · Networking · Solar
               </Badge>
             </motion.div>
 
@@ -266,9 +266,9 @@ export function Hero() {
               <RevealText delay={0.4}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-[1.1]">
                   <span className="text-primary dark:text-white">
-                    <span className="font-light">Smarter</span>{" "}
-                    <span className="font-bold">CCTV</span>{" "}
-                    <span className="font-light">setups.</span>
+                    <span className="font-light">Complete</span>{" "}
+                    <span className="font-bold">Solutions</span>{" "}
+                    <span className="font-light">for</span>
                   </span>
                 </h1>
               </RevealText>
@@ -276,10 +276,9 @@ export function Hero() {
               <RevealText delay={0.6}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-[1.1]">
                   <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-                    <span className="font-bold">Installed</span>{" "}
-                    <span className="font-light">clean.</span>{" "}
-                    <span className="font-bold">Supported</span>{" "}
-                    <span className="font-light">fast.</span>
+                    <span className="font-bold">Security</span>{" "}
+                    <span className="font-light">&</span>{" "}
+                    <span className="font-bold">Energy</span>
                   </span>
                 </h1>
               </RevealText>
@@ -296,8 +295,9 @@ export function Hero() {
               }}
               className="text-sm sm:text-base md:text-lg text-muted-foreground dark:text-slate-300 max-w-2xl leading-relaxed"
             >
-              We design and install reliable CCTV & security systems with the right camera angles, 
-              clean wiring, and mobile access—so you can monitor confidently, anytime.
+              UpEdge Technologies delivers expert CCTV, surveillance, networking, and solar energy solutions. 
+              Backed by nearly 7 years of experience and 500+ successful projects—we focus on reliable installation, 
+              cost-effective planning, and dependable support.
             </motion.p>
 
             {/* Trust Bullets with stagger animation */}
@@ -401,7 +401,7 @@ export function Hero() {
               </div>
 
               {/* Camera Image Container */}
-              <div className="relative w-full mx-auto">
+              <div className="relative w-full mx-auto mt-12">
                 {/* Glow effect */}
                 <div className="absolute inset-0 -z-10">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-cyan-500/20 dark:bg-cyan-400/10 rounded-full blur-3xl" />
@@ -416,11 +416,11 @@ export function Hero() {
                     delay: 1,
                     ease: [0.34, 1.56, 0.64, 1],
                   }}
-                  className="relative w-full h-[500px]"
+                  className="relative w-full h-[480px]"
                 >
                   <Image
-                    src="/camara1.png"
-                    alt="Professional CCTV Security Camera"
+                    src="/logod-removebg-preview.png"
+                    alt="UpEdge Technologies - Professional Security & Tech Solutions"
                     fill
                     className="object-contain drop-shadow-2xl"
                     priority

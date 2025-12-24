@@ -1,10 +1,10 @@
 import { Hero } from "@/components/sections/Hero";
 import { Solutions } from "@/components/sections/Solutions";
-import { WhyUpedge } from "@/components/sections/WhyUpedge";
 import { Blueprint } from "@/components/sections/Blueprint";
 import { Services } from "@/components/sections/Services";
 import { Packages } from "@/components/sections/Packages";
-import { Reviews } from "@/components/sections/Reviews";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { WhyUpedge } from "@/components/sections/WhyUpedge";
 import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
@@ -21,17 +21,17 @@ export default function Home() {
       {/* Blueprint Section */}
       <Blueprint />
 
-      {/* Why Upedge Section */}
-      <WhyUpedge />
-
       {/* Services Section */}
       <Services />
 
       {/* Packages Section */}
       <Packages />
 
-      {/* Reviews Section */}
-      <Reviews />
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* Why Upedge Section */}
+      <WhyUpedge />
 
       {/* FAQ Section */}
       <Faq />
