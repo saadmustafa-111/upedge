@@ -23,7 +23,16 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const serviceCategories = [
+type ServiceCategory = {
+  id: string;
+  title: string;
+  icon: typeof Camera;
+  color: string;
+  image?: string;
+  services: string[];
+};
+
+const serviceCategories: ServiceCategory[] = [
   {
     id: "surveillance",
     title: "Surveillance & CCTV Solutions",
@@ -92,7 +101,6 @@ const serviceCategories = [
     title: "Solar Energy Solutions",
     icon: Sun,
     color: "from-amber-500 to-orange-500",
-    image: "/Solar/installation.jpg",
     services: [
       "Sale & Supply (Panels, Inverters, Batteries)",
       "Installation (Grid / Off-grid / Hybrid)",
@@ -232,7 +240,7 @@ export function Services() {
                         </div>
 
                         {/* Solar Image Panel (Desktop only) */}
-                        {hasImage && (
+                        {hasImage && category.image && (
                           <div className="relative h-full min-h-[500px] lg:min-h-[600px] rounded-2xl overflow-hidden border-2 border-white/40 dark:border-white/20 shadow-xl">
                             <Image
                               src={category.image}

@@ -13,6 +13,10 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Upedge Technologies | Premium Tech Solutions",
   description: "Innovative technology solutions for modern businesses. Premium services, expert team, proven results.",
+  icons: {
+    icon: '/upedge.png',
+    apple: '/upedge.png',
+  },
 };
 
 export default function RootLayout({
