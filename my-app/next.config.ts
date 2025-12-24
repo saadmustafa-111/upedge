@@ -1,11 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    turbo: {
-      root: process.cwd(),
-    },
-  },
+  /* Add your config options here */
 };
 
 export default nextConfig;
