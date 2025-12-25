@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { StructuredData } from "@/components/StructuredData";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -11,11 +13,77 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Upedge Technologies | Premium Tech Solutions",
-  description: "Innovative technology solutions for modern businesses. Premium services, expert team, proven results.",
+  metadataBase: new URL('https://upedgetechnologies.shop'),
+  title: {
+    default: "UpEdge Technologies | Security, CCTV & Networking Solutions in Pakistan",
+    template: "%s | UpEdge Technologies"
+  },
+  description: "UpEdge Technologies provides premium Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan. Expert installation, maintenance, and support for homes and businesses.",
+  keywords: [
+    "UpEdge Technologies",
+    "upedgetechnologies",
+    "CCTV installation Pakistan",
+    "security cameras Pakistan",
+    "surveillance systems",
+    "networking solutions Pakistan",
+    "solar energy Pakistan",
+    "IP cameras",
+    "access control systems",
+    "structured cabling",
+    "network security",
+    "solar panels Pakistan",
+    "security solutions Lahore",
+    "CCTV Lahore",
+    "networking Lahore"
+  ],
+  authors: [{ name: "UpEdge Technologies" }],
+  creator: "UpEdge Technologies",
+  publisher: "UpEdge Technologies",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://upedgetechnologies.shop',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://upedgetechnologies.shop',
+    siteName: 'UpEdge Technologies',
+    title: 'UpEdge Technologies | Security, CCTV & Networking Solutions in Pakistan',
+    description: 'Premium Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan. Expert installation, maintenance, and support.',
+    images: [
+      {
+        url: '/upedge.png',
+        width: 1200,
+        height: 630,
+        alt: 'UpEdge Technologies - Security & Networking Solutions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'UpEdge Technologies | Security, CCTV & Networking Solutions',
+    description: 'Premium Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan.',
+    images: ['/upedge.png'],
+    creator: '@upedgetech',
+  },
   icons: {
     icon: '/upedge.png',
     apple: '/upedge.png',
+    shortcut: '/upedge.png',
+  },
+  manifest: '/manifest.json',
+  verification: {
+    google: 'your-google-verification-code', // Add your Google Search Console verification code
   },
 };
 
@@ -26,6 +94,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DEXSPE7EQX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DEXSPE7EQX', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+        <StructuredData />
+      </head>
       <body className={`${manrope.variable} antialiased`}>
         <ThemeProvider
           attribute="class"

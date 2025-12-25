@@ -135,9 +135,10 @@ export function WhyUpedge() {
                   "relative h-full p-6 sm:p-8 text-center",
                   "rounded-3xl overflow-hidden",
                   "bg-white/90 dark:bg-slate-900/90",
-                  "shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]",
-                  "hover:shadow-[0_8px_40px_rgba(0,194,255,0.12)]",
-                  "transition-all duration-300 group"
+                  "shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]",
+                  "hover:shadow-[0_12px_48px_rgba(0,194,255,0.15)] dark:hover:shadow-[0_12px_48px_rgba(0,194,255,0.2)]",
+                  "hover:-translate-y-1",
+                  "transition-all duration-500 ease-out group"
                 )}>
                   {/* Icon */}
                   <div className={cn(

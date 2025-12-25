@@ -1,0 +1,24 @@
+{
+  "name": "UpEdge Technologies - Security, CCTV & Networking Solutions",
+  "short_name": "UpEdge Tech",
+  "description": "Premium Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#06b6d4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/upedge.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/upedge.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
