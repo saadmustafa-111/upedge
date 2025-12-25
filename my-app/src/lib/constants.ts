@@ -20,7 +20,7 @@ export const SERVICE_AREAS = [
   "Havelian",
 ];
 
-export const YEARS_EXPERIENCE = 7;
+export const YEARS_EXPERIENCE = 10;
 export const PROJECTS_COMPLETED = 500;
 
 export const BRANDS = [
