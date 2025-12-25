@@ -98,9 +98,22 @@ export const metadata: Metadata = {
     creator: '@upedgetech',
   },
   icons: {
-    icon: '/upedge.png',
-    apple: '/upedge.png',
-    shortcut: '/upedge.png',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'icon',
+        url: '/favicon.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+    ],
   },
   manifest: '/manifest.json',
   verification: {

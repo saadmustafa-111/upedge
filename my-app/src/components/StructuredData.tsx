@@ -5,7 +5,7 @@ export function StructuredData() {
     "name": "UpEdge Technologies",
     "alternateName": "upedgetechnologies",
     "url": "https://upedgetechnologies.shop",
-    "logo": "https://upedgetechnologies.shop/upedge.png",
+    "logo": "https://upedgetechnologies.shop/favicon.png",
     "description": "Professional security cameras installer in Abbottabad, Islamabad, Lahore and across Pakistan. Premium Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems.",
     "address": {
       "@type": "PostalAddress",
@@ -54,7 +54,7 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "UpEdge Technologies",
-    "image": "https://upedgetechnologies.shop/upedge.png",
+    "image": "https://upedgetechnologies.shop/favicon.png",
     "description": "Leading security cameras installer in Abbottabad and provider of Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems across Pakistan",
     "url": "https://upedgetechnologies.shop",
     "priceRange": "$$",
