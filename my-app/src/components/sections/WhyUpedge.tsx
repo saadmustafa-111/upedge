@@ -12,7 +12,7 @@ const achievements = [
     icon: Award,
     value: `${YEARS_EXPERIENCE}+`,
     label: "Years Experience",
-    description: "Nearly 7 years of hands-on expertise",
+    description: "Over 10 years of hands-on expertise",
     iconColor: "text-cyan-600 dark:text-cyan-400",
     iconBg: "bg-cyan-500/10",
   },
@@ -76,7 +76,7 @@ export function WhyUpedge() {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-slate-300 leading-relaxed">
-            <span className="font-semibold text-foreground dark:text-white">Security, Surveillance & Networking</span> + <span className="font-semibold text-foreground dark:text-white">Solar Energy Solutions</span> — backed by nearly 7 years of experience and 500+ successful projects.
+            <span className="font-semibold text-foreground dark:text-white">Security, Surveillance & Networking</span> + <span className="font-semibold text-foreground dark:text-white">Solar Energy Solutions</span> — backed by over 10 years of experience and 500+ successful projects.
           </p>
         </motion.div>
 
@@ -102,7 +102,7 @@ export function WhyUpedge() {
             </h3>
             <div className="space-y-4 text-base sm:text-lg text-foreground/80 dark:text-slate-200 leading-relaxed">
               <p>
-                <span className="font-semibold text-foreground dark:text-white">UpEdge Technologies</span> specializes in comprehensive security, surveillance, networking, and solar energy solutions. With nearly 7 years of hands-on experience and over 500 completed projects, we deliver reliable installations and scalable solutions tailored to your specific needs.
+                <span className="font-semibold text-foreground dark:text-white">UpEdge Technologies</span> specializes in comprehensive security, surveillance, networking, and solar energy solutions. With over 10 years of hands-on experience and over 500 completed projects, we deliver reliable installations and scalable solutions tailored to your specific needs.
               </p>
               <p>
                 Our focus extends beyond installation — we ensure <span className="font-semibold text-foreground dark:text-white">cost-effective planning</span>, <span className="font-semibold text-foreground dark:text-white">manufacturer-standard installations</span>, and <span className="font-semibold text-foreground dark:text-white">dependable after-sales support</span> to keep your systems running smoothly.

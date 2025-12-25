@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: "UpEdge Technologies | Security, CCTV & Networking Solutions in Pakistan",
     template: "%s | UpEdge Technologies"
   },
-  description: "UpEdge Technologies provides premium Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan. Expert installation, maintenance, and support for homes and businesses.",
+  description: "UpEdge Technologies provides premium Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems across Pakistan. Professional security cameras installer in Abbottabad, Islamabad, Lahore, Rawalpindi, Karachi & major cities. Expert installation, maintenance, and support for homes and businesses.",
   keywords: [
     "UpEdge Technologies",
     "upedgetechnologies",
@@ -34,7 +34,28 @@ export const metadata: Metadata = {
     "solar panels Pakistan",
     "security solutions Lahore",
     "CCTV Lahore",
-    "networking Lahore"
+    "networking Lahore",
+    // Abbottabad specific keywords
+    "security cameras installer Abbottabad",
+    "CCTV installation Abbottabad",
+    "networking solutions Abbottabad",
+    "solar panels Abbottabad",
+    // Other major cities
+    "security cameras Islamabad",
+    "CCTV Islamabad",
+    "security cameras Rawalpindi",
+    "CCTV Rawalpindi",
+    "security cameras Karachi",
+    "networking Karachi",
+    "security cameras Peshawar",
+    "CCTV Peshawar",
+    "security cameras Faisalabad",
+    "security cameras Multan",
+    // Service-specific city combinations
+    "CCTV camera installation services Pakistan",
+    "professional security camera installer",
+    "best CCTV company Pakistan",
+    "networking and cabling services Pakistan"
   ],
   authors: [{ name: "UpEdge Technologies" }],
   creator: "UpEdge Technologies",

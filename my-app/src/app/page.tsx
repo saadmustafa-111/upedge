@@ -12,10 +12,10 @@ import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "UpEdge Technologies | Security, CCTV & Networking Solutions in Pakistan",
-  description: "Leading provider of Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan. Expert installation, maintenance, and 24/7 support for homes and businesses.",
+  description: "Leading provider of Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan. Professional security cameras installer in Abbottabad, Islamabad, Lahore, Karachi & major cities. Expert installation, maintenance, and 24/7 support for homes and businesses.",
   openGraph: {
     title: "UpEdge Technologies | Security, CCTV & Networking Solutions in Pakistan",
-    description: "Leading provider of Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan.",
+    description: "Professional security cameras installer in Abbottabad, Islamabad, Lahore & across Pakistan. Leading provider of CCTV, Networking Solutions, and Solar Energy systems.",
     url: "https://upedgetechnologies.shop",
     type: "website",
   },

@@ -6,12 +6,39 @@ export function StructuredData() {
     "alternateName": "upedgetechnologies",
     "url": "https://upedgetechnologies.shop",
     "logo": "https://upedgetechnologies.shop/upedge.png",
-    "description": "Premium Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan",
+    "description": "Professional security cameras installer in Abbottabad, Islamabad, Lahore and across Pakistan. Premium Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems.",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "PK",
-      "addressLocality": "Pakistan"
+      "addressLocality": "Abbottabad",
+      "addressRegion": "Khyber Pakhtunkhwa"
     },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Abbottabad"
+      },
+      {
+        "@type": "City",
+        "name": "Islamabad"
+      },
+      {
+        "@type": "City",
+        "name": "Rawalpindi"
+      },
+      {
+        "@type": "City",
+        "name": "Lahore"
+      },
+      {
+        "@type": "City",
+        "name": "Karachi"
+      },
+      {
+        "@type": "City",
+        "name": "Peshawar"
+      }
+    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
@@ -28,12 +55,18 @@ export function StructuredData() {
     "@type": "LocalBusiness",
     "name": "UpEdge Technologies",
     "image": "https://upedgetechnologies.shop/upedge.png",
-    "description": "Leading provider of Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan",
+    "description": "Leading security cameras installer in Abbottabad and provider of Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems across Pakistan",
     "url": "https://upedgetechnologies.shop",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "PK"
+      "addressCountry": "PK",
+      "addressLocality": "Abbottabad",
+      "addressRegion": "Khyber Pakhtunkhwa"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Pakistan"
     },
     "aggregateRating": {
       "@type": "AggregateRating",

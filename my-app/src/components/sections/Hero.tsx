@@ -12,7 +12,7 @@ import { HeroBackground } from "@/components/visuals/HeroBackground";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const trustPoints = [
-  "Nearly 7 years experience · 500+ projects completed",
+  "Over 10 years experience · 500+ projects completed",
   "Security, Surveillance, Networking & Solar solutions",
   "Manufacturer-standard installations · Reliable support",
 ];
@@ -296,7 +296,7 @@ export function Hero() {
               className="text-sm sm:text-base md:text-lg text-muted-foreground dark:text-slate-300 max-w-2xl leading-relaxed"
             >
               UpEdge Technologies delivers expert CCTV, surveillance, networking, and solar energy solutions. 
-              Backed by nearly 7 years of experience and 500+ successful projects—we focus on reliable installation, 
+              Backed by over 10 years of experience and 500+ successful projects—we focus on reliable installation, 
               cost-effective planning, and dependable support.
             </motion.p>
 
