@@ -2,52 +2,97 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Globe, ShoppingCart, LayoutDashboard, Receipt, ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ShoppingCart, Package, Pill, Globe, Headphones, Monitor, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DeckSlider } from "@/components/shared/DeckSlider";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const digitalServices = [
   {
-    id: "websites",
-    icon: Globe,
-    title: "Business Websites",
+    id: "pos",
+    icon: ShoppingCart,
+    title: "POS & Billing (Retail)",
+    oneLiner: "Fast checkout, invoices, and daily sales reporting.",
     gradient: "from-blue-500 to-cyan-500",
     features: [
-      "Modern, mobile-first websites",
-      "SEO-ready + WhatsApp/contact integration",
+      "Barcode + receipt support",
+      "Cashier & admin roles",
     ],
   },
   {
-    id: "pos",
-    icon: Receipt,
-    title: "POS & Billing",
+    id: "inventory",
+    icon: Package,
+    title: "Inventory & Stock Management",
+    oneLiner: "Track stock in/out and avoid missing items.",
     gradient: "from-violet-500 to-purple-500",
     features: [
-      "Sales, invoices, stock & reports",
-      "Multi-user access (optional)",
+      "Low-stock alerts",
+      "Purchase & stock logs",
+    ],
+  },
+  {
+    id: "pharmacy",
+    icon: Pill,
+    title: "Medical Store / Pharmacy System",
+    oneLiner: "Batch/expiry-ready tracking for medical inventory.",
+    gradient: "from-emerald-500 to-teal-500",
+    features: [
+      "Expiry reminders",
+      "Supplier & purchase records",
     ],
   },
   {
     id: "ecommerce",
-    icon: ShoppingCart,
-    title: "eCommerce Stores",
+    icon: Monitor,
+    title: "eCommerce / WhatsApp Ordering",
+    oneLiner: "Accept orders online and manage deliveries easily.",
     gradient: "from-amber-500 to-orange-500",
     features: [
-      "Catalog, orders, payments",
-      "Delivery/COD workflows",
+      "Catalog + order tracking",
+      "COD-friendly workflows",
     ],
   },
   {
-    id: "dashboards",
-    icon: LayoutDashboard,
-    title: "Custom Business Dashboards",
-    gradient: "from-emerald-500 to-teal-500",
+    id: "website",
+    icon: Globe,
+    title: "Business Website (Local SEO)",
+    oneLiner: "A modern website that brings local customers.",
+    gradient: "from-pink-500 to-rose-500",
     features: [
-      "Admin panels & automation",
-      "Integrations when needed",
+      "Google-friendly pages",
+      "WhatsApp/call CTA built-in",
     ],
   },
+  {
+    id: "support",
+    icon: Headphones,
+    title: "Maintenance & Support",
+    oneLiner: "Updates, backups, and ongoing support when needed.",
+    gradient: "from-indigo-500 to-blue-500",
+    features: [
+      "Bug fixes & improvements",
+      "After-sales support",
+    ],
+  },
+];
+
+const perfectFor = [
+  "Retail Shops",
+  "Medical Stores",
+  "Grocery/Mini Mart",
+  "Electronics",
+  "Small Clinics",
+];
+
+const whatWeBuild = [
+  "POS",
+  "Inventory",
+  "Pharmacy",
+  "Websites",
+  "eCommerce",
+  "Admin Panels",
+  "Integrations",
 ];
 
 export function DigitalSolutions() {
@@ -55,7 +100,11 @@ export function DigitalSolutions() {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
-      "Hi UpEdge Technologies, I need a digital solution (Website/POS/eCommerce). My business type is __. Please guide me."
+      `Hi UpEdge Technologies, I need a digital solution for my business.
+Business type: (Shop/Medical Store/Grocery/Other)
+I need: (POS/Inventory/Pharmacy/eCommerce/Website)
+Location/City: __
+Please guide me with the best setup.`
     );
     window.open(`${WHATSAPP_URL}?text=${message}`, "_blank");
   };
@@ -89,17 +138,31 @@ export function DigitalSolutions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: shouldReduceMotion ? 0.3 : 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-8 sm:mb-12"
+          className="text-center max-w-3xl mx-auto mb-6 sm:mb-8"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3 sm:mb-4">
             <span className="text-primary dark:text-white">Digital Solutions </span>
             <span className="bg-gradient-to-r from-purple-500 via-violet-500 to-blue-500 dark:from-purple-400 dark:via-violet-400 dark:to-blue-400 bg-clip-text text-transparent">
-              for Businesses
+              for Retail Businesses
             </span>
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground dark:text-slate-300 leading-relaxed">
-            For shops and offices that want a modern website, POS, or eCommerce—built clean and supported.
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground dark:text-slate-300 leading-relaxed mb-4">
+            Websites, POS, and inventory-ready systems for shops and medical stores—built to run daily operations smoothly.
           </p>
+          
+          {/* Perfect For badges */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <span className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400 font-medium">Perfect for:</span>
+            {perfectFor.map((item) => (
+              <Badge
+                key={item}
+                variant="outline"
+                className="text-xs bg-white/50 dark:bg-slate-800/50 border-purple-500/30 text-foreground dark:text-slate-300"
+              >
+                {item}
+              </Badge>
+            ))}
+          </div>
         </motion.div>
 
         {/* Digital Services Cards */}
@@ -120,7 +183,7 @@ export function DigitalSolutions() {
               >
                 <div
                   className={cn(
-                    "relative h-full p-6 sm:p-8 rounded-3xl overflow-hidden",
+                    "relative h-full p-5 sm:p-6 rounded-3xl overflow-hidden",
                     "bg-white/90 dark:bg-slate-900/90",
                     "shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]",
                     "hover:shadow-[0_8px_40px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)]",
@@ -129,26 +192,31 @@ export function DigitalSolutions() {
                 >
                   {/* Icon */}
                   <div className={cn(
-                    "w-14 h-14 rounded-2xl mb-4 flex items-center justify-center transition-all duration-300",
+                    "w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mb-3 sm:mb-4 flex items-center justify-center transition-all duration-300",
                     `bg-gradient-to-br ${service.gradient} text-white`,
                     "group-hover:scale-110"
                   )}>
-                    <Icon className="w-7 h-7" />
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground dark:text-white mb-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground dark:text-white mb-2">
                     {service.title}
                   </h3>
 
+                  {/* One-liner */}
+                  <p className="text-sm text-muted-foreground dark:text-slate-400 mb-3 sm:mb-4">
+                    {service.oneLiner}
+                  </p>
+
                   {/* Features */}
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5 sm:space-y-2">
                     {service.features.map((feature, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2 text-sm sm:text-base text-foreground/80 dark:text-slate-200"
+                        className="flex items-start gap-2 text-sm text-foreground/80 dark:text-slate-200"
                       >
-                        <span className="text-cyan-600 dark:text-cyan-400 mt-1">•</span>
+                        <span className="text-cyan-600 dark:text-cyan-400 mt-0.5">•</span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -157,8 +225,29 @@ export function DigitalSolutions() {
               </motion.div>
             );
           })}
-          desktopGridClassName="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10"
+          desktopGridClassName="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8"
         />
+
+        {/* What We Build Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: shouldReduceMotion ? 0.3 : 0.6, delay: shouldReduceMotion ? 0 : 0.3 }}
+          className="text-center mb-6 sm:mb-8"
+        >
+          <p className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400 mb-3">What we build</p>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {whatWeBuild.map((item) => (
+              <Badge
+                key={item}
+                className="text-xs sm:text-sm bg-purple-500/10 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border-purple-500/30 dark:border-purple-500/30"
+              >
+                {item}
+              </Badge>
+            ))}
+          </div>
+        </motion.div>
 
         {/* CTA Row */}
         <motion.div

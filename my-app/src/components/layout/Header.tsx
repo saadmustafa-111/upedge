@@ -57,7 +57,7 @@ export function Header() {
         )}
       >
         <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-7xl flex items-center justify-between gap-3 md:gap-6">
+          <div className="mx-auto max-w-[1400px] flex items-center justify-between gap-2 md:gap-4">
             
             {/* Logo - Outside glass */}
             <ScrollLink
@@ -86,17 +86,17 @@ export function Header() {
 
             {/* Desktop Navigation - Glass Container */}
             <nav className={cn(
-              "hidden lg:flex items-center gap-1 rounded-full backdrop-blur-2xl border-2 transition-all duration-500",
+              "hidden lg:flex items-center gap-0.5 rounded-full backdrop-blur-2xl border-2 transition-all duration-500",
               "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15",
               "shadow-[0_4px_24px_rgba(0,194,255,0.15),inset_0_1px_2px_rgba(255,255,255,0.4)] dark:shadow-[0_4px_24px_rgba(0,194,255,0.1),inset_0_1px_2px_rgba(255,255,255,0.1)]",
-              isScrolled ? "p-1" : "p-1.5"
+              isScrolled ? "px-1 py-1" : "px-1.5 py-1.5"
             )}>
               {NAV_ITEMS.map((item) => (
                 <ScrollLink
                   key={item.id}
                   to={item.id}
                   className={cn(
-                    "relative px-3 py-2 text-sm font-medium rounded-full transition-all duration-300 cursor-pointer",
+                    "relative px-2.5 py-1.5 text-[13px] font-medium rounded-full transition-all duration-300 cursor-pointer whitespace-nowrap",
                     "hover:text-foreground",
                     activeSection === item.id
                       ? "bg-white/90 dark:bg-slate-800/80 text-primary dark:text-cyan-400 shadow-[0_2px_8px_rgba(0,194,255,0.2)] backdrop-blur-xl"

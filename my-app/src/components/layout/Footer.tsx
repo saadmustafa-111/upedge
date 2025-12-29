@@ -21,9 +21,9 @@ export function Footer() {
               "text-xs text-muted-foreground/70 dark:text-slate-500",
               "flex items-center justify-center gap-1"
             )}>
-              <span>Site developed by</span>
+              <span>Site developed by:</span>
               <span className="font-semibold text-foreground/80 dark:text-slate-400">
-                Saad Mustafa
+             Upedge Technologies
               </span>
             </div>
           </div>
