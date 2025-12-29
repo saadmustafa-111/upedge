@@ -6,6 +6,7 @@ import { Services } from "@/components/sections/Services";
 import { Packages } from "@/components/sections/Packages";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyUpedge } from "@/components/sections/WhyUpedge";
+import { DigitalSolutions } from "@/components/sections/DigitalSolutions";
 import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
@@ -44,6 +45,9 @@ export default function Home() {
 
       {/* Why Upedge Section */}
       <WhyUpedge />
+
+      {/* Digital Solutions Section */}
+      <DigitalSolutions />
 
       {/* FAQ Section */}
       <Faq />

@@ -115,11 +115,11 @@ export const metadata: Metadata = {
       },
     ],
   },
-  manifest: '/manifest.json',
-  verification: {
-    google: 'd78fbfd6c3df97aa',
-  },
-};
+    manifest: '/manifest.json',
+    verification: {
+      google: 'd78fbfd6c3df97aa',
+    },
+  };
 
 export default function RootLayout({
   children,
