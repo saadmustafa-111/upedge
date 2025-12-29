@@ -12,67 +12,85 @@ const digitalServices = [
   {
     id: "pos",
     icon: ShoppingCart,
-    title: "POS & Billing (Retail)",
-    oneLiner: "Fast checkout, invoices, and daily sales reporting.",
+    title: "Smart POS & Billing System",
+    oneLiner: "Transform your checkout with intelligent billing that tracks every sale, generates professional invoices, and provides real-time business insights.",
     gradient: "from-blue-500 to-cyan-500",
+    tag: "Most Popular",
     features: [
-      "Barcode + receipt support",
-      "Cashier & admin roles",
+      "Multi-user access with role-based permissions (cashier, manager, admin)",
+      "Barcode scanning, thermal printing, and digital receipt via SMS/Email",
+      "Daily/weekly/monthly sales reports with profit/loss analytics",
+      "Customer purchase history and loyalty tracking",
     ],
   },
   {
     id: "inventory",
     icon: Package,
-    title: "Inventory & Stock Management",
-    oneLiner: "Track stock in/out and avoid missing items.",
+    title: "Inventory & Stock Control",
+    oneLiner: "Never run out of stock or overstock again. Automated inventory tracking with intelligent alerts and supplier management.",
     gradient: "from-violet-500 to-purple-500",
+    tag: "Essential",
     features: [
-      "Low-stock alerts",
-      "Purchase & stock logs",
+      "Real-time stock monitoring with low-stock and reorder alerts",
+      "Purchase order management and supplier database",
+      "Multi-location inventory support for chain stores",
+      "Barcode-based stock in/out with complete audit trails",
     ],
   },
   {
     id: "pharmacy",
     icon: Pill,
-    title: "Medical Store / Pharmacy System",
-    oneLiner: "Batch/expiry-ready tracking for medical inventory.",
+    title: "Pharmacy Management Suite",
+    oneLiner: "Complete pharmacy solution with batch tracking, expiry management, and regulatory compliance for medical stores.",
     gradient: "from-emerald-500 to-teal-500",
+    tag: "Specialized",
     features: [
-      "Expiry reminders",
-      "Supplier & purchase records",
+      "Batch-wise tracking with expiry date alerts (15/30/60 days)",
+      "Drug database with salt composition and alternatives",
+      "Prescription management and patient records (HIPAA-ready)",
+      "Supplier-wise purchase history and price comparison",
     ],
   },
   {
     id: "ecommerce",
     icon: Monitor,
-    title: "eCommerce / WhatsApp Ordering",
-    oneLiner: "Accept orders online and manage deliveries easily.",
+    title: "eCommerce & Online Ordering",
+    oneLiner: "Sell online through your own platform. Accept orders, manage deliveries, and grow your business beyond your physical store.",
     gradient: "from-amber-500 to-orange-500",
+    tag: "Growth Ready",
     features: [
-      "Catalog + order tracking",
-      "COD-friendly workflows",
+      "Mobile-optimized catalog with product images and descriptions",
+      "WhatsApp/SMS order notifications and customer communication",
+      "COD, online payment, and delivery tracking integration",
+      "Customer accounts, order history, and reviews management",
     ],
   },
   {
     id: "website",
     icon: Globe,
-    title: "Business Website (Local SEO)",
-    oneLiner: "A modern website that brings local customers.",
+    title: "Business Website (SEO-Ready)",
+    oneLiner: "Get found on Google by local customers. Professional website with local SEO optimization to drive foot traffic to your store.",
     gradient: "from-pink-500 to-rose-500",
+    tag: "Local Reach",
     features: [
-      "Google-friendly pages",
-      "WhatsApp/call CTA built-in",
+      "Google Business Profile integration and local SEO optimization",
+      "Mobile-first responsive design with fast loading",
+      "Direct WhatsApp/call buttons, Google Maps integration",
+      "Product/service showcase with gallery and testimonials",
     ],
   },
   {
     id: "support",
     icon: Headphones,
-    title: "Maintenance & Support",
-    oneLiner: "Updates, backups, and ongoing support when needed.",
+    title: "Ongoing Support & Training",
+    oneLiner: "We don't just build and leave. Get continuous support, staff training, updates, and technical assistance whenever needed.",
     gradient: "from-indigo-500 to-blue-500",
+    tag: "Peace of Mind",
     features: [
-      "Bug fixes & improvements",
-      "After-sales support",
+      "Free staff training (on-site or remote) for smooth adoption",
+      "Regular software updates and security patches",
+      "Priority technical support via phone/WhatsApp/remote access",
+      "Data backup, recovery assistance, and system health monitoring",
     ],
   },
 ];
@@ -86,13 +104,14 @@ const perfectFor = [
 ];
 
 const whatWeBuild = [
-  "POS",
-  "Inventory",
-  "Pharmacy",
-  "Websites",
-  "eCommerce",
-  "Admin Panels",
-  "Integrations",
+  "Point of Sale (POS)",
+  "Inventory Systems",
+  "Pharmacy Software",
+  "Business Websites",
+  "eCommerce Platforms",
+  "Admin Dashboards",
+  "Mobile Apps",
+  "API Integrations",
 ];
 
 export function DigitalSolutions() {
@@ -100,11 +119,27 @@ export function DigitalSolutions() {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
-      `Hi UpEdge Technologies, I need a digital solution for my business.
-Business type: (Shop/Medical Store/Grocery/Other)
-I need: (POS/Inventory/Pharmacy/eCommerce/Website)
-Location/City: __
-Please guide me with the best setup.`
+      `Hi UpEdge Technologies,
+
+I'm interested in your Digital Solutions for my retail business.
+
+Business Details:
+• Type: (Retail Shop / Medical Store / Grocery / Restaurant / Other)
+• Current System: (Manual / Excel / Basic POS / None)
+• Main Challenges: (Inventory tracking / Billing / Staff management / Online presence)
+
+I need assistance with:
+☐ Smart POS & Billing
+☐ Inventory Management
+☐ Pharmacy System
+☐ eCommerce/Online Ordering
+☐ Business Website
+☐ Complete Package
+
+Location: ___________
+Best time to discuss: ___________
+
+Please guide me with the best solution for my business.`
     );
     window.open(`${WHATSAPP_URL}?text=${message}`, "_blank");
   };
@@ -147,7 +182,7 @@ Please guide me with the best setup.`
             </span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground dark:text-slate-300 leading-relaxed mb-4">
-            Websites, POS, and inventory-ready systems for shops and medical stores—built to run daily operations smoothly.
+            Empower your retail business with professional software solutions. From smart POS systems to online ordering—we build custom tools that streamline operations, reduce manual work, and help you serve customers better.
           </p>
           
           {/* Perfect For badges */}
@@ -190,6 +225,20 @@ Please guide me with the best setup.`
                     "transition-all duration-300 group"
                   )}
                 >
+                  {/* Tag Badge */}
+                  {service.tag && (
+                    <div className="absolute top-4 right-4">
+                      <Badge
+                        className={cn(
+                          "text-[10px] sm:text-xs font-semibold px-2 py-0.5",
+                          `bg-gradient-to-r ${service.gradient} text-white border-0`
+                        )}
+                      >
+                        {service.tag}
+                      </Badge>
+                    </div>
+                  )}
+
                   {/* Icon */}
                   <div className={cn(
                     "w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mb-3 sm:mb-4 flex items-center justify-center transition-all duration-300",
@@ -205,7 +254,7 @@ Please guide me with the best setup.`
                   </h3>
 
                   {/* One-liner */}
-                  <p className="text-sm text-muted-foreground dark:text-slate-400 mb-3 sm:mb-4">
+                  <p className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400 mb-3 sm:mb-4 leading-relaxed">
                     {service.oneLiner}
                   </p>
 
@@ -214,9 +263,9 @@ Please guide me with the best setup.`
                     {service.features.map((feature, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2 text-sm text-foreground/80 dark:text-slate-200"
+                        className="flex items-start gap-2 text-xs sm:text-sm text-foreground/80 dark:text-slate-200"
                       >
-                        <span className="text-cyan-600 dark:text-cyan-400 mt-0.5">•</span>
+                        <span className="text-cyan-600 dark:text-cyan-400 mt-0.5 shrink-0">✓</span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -236,7 +285,7 @@ Please guide me with the best setup.`
           transition={{ duration: shouldReduceMotion ? 0.3 : 0.6, delay: shouldReduceMotion ? 0 : 0.3 }}
           className="text-center mb-6 sm:mb-8"
         >
-          <p className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400 mb-3">What we build</p>
+          <p className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400 mb-3 font-medium">Our Technology Stack</p>
           <div className="flex flex-wrap items-center justify-center gap-2">
             {whatWeBuild.map((item) => (
               <Badge
@@ -246,6 +295,33 @@ Please guide me with the best setup.`
                 {item}
               </Badge>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Value Proposition */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: shouldReduceMotion ? 0.3 : 0.6, delay: shouldReduceMotion ? 0 : 0.35 }}
+          className="max-w-4xl mx-auto mb-6 sm:mb-8"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-purple-500/5 to-violet-500/5 dark:from-purple-500/10 dark:to-violet-500/10">
+              <div className="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">100%</div>
+              <div className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400">Custom Built</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground/80 dark:text-slate-500 mt-1">Tailored to your business</div>
+            </div>
+            <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-blue-500/5 to-cyan-500/5 dark:from-blue-500/10 dark:to-cyan-500/10">
+              <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">24/7</div>
+              <div className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400">Support Available</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground/80 dark:text-slate-500 mt-1">We're here when you need us</div>
+            </div>
+            <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-emerald-500/5 to-teal-500/5 dark:from-emerald-500/10 dark:to-teal-500/10">
+              <div className="text-2xl sm:text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">Free</div>
+              <div className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400">Training Included</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground/80 dark:text-slate-500 mt-1">Your team gets full training</div>
+            </div>
           </div>
         </motion.div>
 
@@ -291,9 +367,9 @@ Please guide me with the best setup.`
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: shouldReduceMotion ? 0.3 : 0.6, delay: shouldReduceMotion ? 0 : 0.5 }}
-          className="text-center text-xs sm:text-sm text-muted-foreground dark:text-slate-400 italic"
+          className="text-center text-xs sm:text-sm text-muted-foreground dark:text-slate-400"
         >
-          Security is our core. Digital solutions are offered for business clients who need both.
+          <span className="font-semibold text-cyan-600 dark:text-cyan-400">Security & Surveillance</span> is our primary expertise. Digital solutions are offered as complementary services for our business clients seeking comprehensive technology integration.
         </motion.p>
       </div>
     </section>
