@@ -5,6 +5,8 @@ import { Blueprint } from "@/components/sections/Blueprint";
 import { Services } from "@/components/sections/Services";
 import { Packages } from "@/components/sections/Packages";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Team } from "@/components/sections/Team";
+import { Gallery } from "@/components/sections/Gallery";
 import { WhyUpedge } from "@/components/sections/WhyUpedge";
 import { DigitalSolutions } from "@/components/sections/DigitalSolutions";
 import { Faq } from "@/components/sections/Faq";
@@ -42,6 +44,12 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Team Section */}
+      <Team />
+
+      {/* Gallery Section */}
+      <Gallery />
 
       {/* Why Upedge Section */}
       <WhyUpedge />

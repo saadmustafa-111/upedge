@@ -76,12 +76,23 @@ export function Header() {
                   priority
                 />
               </div>
-              <span className={cn(
-                "font-bold tracking-tight text-primary dark:text-white transition-all duration-500 group-hover:text-accent dark:group-hover:text-cyan-400 whitespace-nowrap drop-shadow-md",
-                isScrolled ? "text-xs md:text-sm" : "text-sm md:text-base lg:text-lg"
-              )}>
-                {SITE_NAME}
-              </span>
+              <div className="flex flex-col gap-0.5">
+                <span className={cn(
+                  "font-bold tracking-tight text-primary dark:text-white transition-all duration-500 group-hover:text-accent dark:group-hover:text-cyan-400 whitespace-nowrap drop-shadow-md",
+                  isScrolled ? "text-xs md:text-sm" : "text-sm md:text-base lg:text-lg"
+                )}>
+                  {SITE_NAME}
+                </span>
+                <span className={cn(
+                  "hidden lg:inline-flex text-[10px] font-medium px-2 py-0.5 rounded-full",
+                  "bg-cyan-500/10 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400",
+                  "border border-cyan-500/20 dark:border-cyan-500/20",
+                  "transition-all duration-500",
+                  isScrolled ? "opacity-0 h-0 py-0" : "opacity-100"
+                )}>
+                  Led by Specialists
+                </span>
+              </div>
             </ScrollLink>
 
             {/* Desktop Navigation - Glass Container */}

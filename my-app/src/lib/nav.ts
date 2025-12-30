@@ -4,9 +4,10 @@ export const NAV_ITEMS = [
   { id: "blueprint", label: "Blueprint" },
   { id: "services", label: "Services" },
   { id: "packages", label: "Packages" },
-  { id: "testimonials", label: "Testimonials" },
+  { id: "testimonials", label: "Reviews" },
+  { id: "team", label: "Team" },
+  { id: "gallery", label: "Gallery" },
   { id: "why", label: "Why Upedge" },
-  { id: "digital", label: "Digital Solutions" },
   { id: "faq", label: "FAQ" },
   { id: "contact", label: "Contact" },
 ] as const;
