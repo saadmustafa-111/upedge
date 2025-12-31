@@ -375,7 +375,7 @@ export function Blueprint() {
   const [mainGoal, setMainGoal] = useState(""); // For digital
 
   const departments = [
-    { id: "security" as Department, label: "Security", icon: Camera, color: "text-blue-600" },
+    { id: "security" as Department, label: "Security", icon: Shield, color: "text-blue-600" },
     { id: "solar" as Department, label: "Solar", icon: Sun, color: "text-yellow-600" },
     { id: "networking" as Department, label: "Networking", icon: Wifi, color: "text-cyan-600" },
     { id: "digital" as Department, label: "Digital", icon: Smartphone, color: "text-purple-600" },
