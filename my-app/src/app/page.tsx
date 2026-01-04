@@ -47,9 +47,9 @@ export default function Home() {
 
       {/* Team Section */}
       <Team />
-
-      {/* Gallery Section */}
-      <Gallery />
+{/* 
+      Gallery Section */}
+      {/* <Gallery /> */}
 
       {/* Why Upedge Section */}
       <WhyUpedge />
