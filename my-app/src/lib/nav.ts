@@ -6,7 +6,7 @@ export const NAV_ITEMS = [
   { id: "packages", label: "Packages" },
   { id: "testimonials", label: "Reviews" },
   { id: "team", label: "Team" },
-  { id: "gallery", label: "Gallery" },
+
   { id: "why", label: "Why Upedge" },
   { id: "faq", label: "FAQ" },
   { id: "contact", label: "Contact" },
