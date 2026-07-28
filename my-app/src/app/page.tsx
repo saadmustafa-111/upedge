@@ -6,19 +6,21 @@ import { Services } from "@/components/sections/Services";
 import { Packages } from "@/components/sections/Packages";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Team } from "@/components/sections/Team";
-import { Gallery } from "@/components/sections/Gallery";
 import { WhyUpedge } from "@/components/sections/WhyUpedge";
 import { DigitalSolutions } from "@/components/sections/DigitalSolutions";
 import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   title: "UpEdge Technologies | Security, CCTV & Networking Solutions in Pakistan",
-  description: "Leading provider of Security & Surveillance (CCTV), Networking Solutions, and Solar Energy systems in Pakistan. Professional security cameras installer in Abbottabad, Islamabad, Lahore, Karachi & major cities. Expert installation, maintenance, and 24/7 support for homes and businesses.",
+  description:
+    "Leading provider of Security & Surveillance (CCTV), Networking Solutions, Access Control, and digital systems in Pakistan. Professional security cameras installer in Abbottabad, Islamabad, Lahore, Karachi & major cities. Expert installation, maintenance, and 24/7 support for homes and businesses.",
   openGraph: {
     title: "UpEdge Technologies | Security, CCTV & Networking Solutions in Pakistan",
-    description: "Professional security cameras installer in Abbottabad, Islamabad, Lahore & across Pakistan. Leading provider of CCTV, Networking Solutions, and Solar Energy systems.",
+    description:
+      "Professional security cameras installer in Abbottabad, Islamabad, Lahore & across Pakistan. Leading provider of CCTV, Networking Solutions, Access Control, and digital systems.",
     url: "https://upedgetechnologies.shop",
     type: "website",
   },
@@ -26,46 +28,20 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
+    <main className="page-shell flex flex-col">
       <Hero />
-
-      {/* Solutions Section */}
       <Solutions />
-
-      {/* Blueprint Section */}
       <Blueprint />
-
-      {/* Services Section */}
       <Services />
-
-      {/* Packages Section */}
       <Packages />
-
-      {/* Testimonials Section */}
       <Testimonials />
-
-      {/* Team Section */}
       <Team />
-{/* 
-      Gallery Section */}
-      {/* <Gallery /> */}
-
-      {/* Why Upedge Section */}
       <WhyUpedge />
-
-      {/* Digital Solutions Section */}
       <DigitalSolutions />
-
-      {/* FAQ Section */}
       <Faq />
-
-      {/* Contact Section */}
       <Contact />
-
-      {/* Footer */}
       <Footer />
-    </div>
+      <FloatingWhatsApp />
+    </main>
   );
 }
-

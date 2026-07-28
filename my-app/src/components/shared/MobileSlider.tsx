@@ -98,8 +98,8 @@ export function MobileSlider({
                 itemClassName,
                 selectedIndex === index && !shouldReduceMotion && [
                   "transition-all duration-300",
-                  "ring-2 ring-cyan-500/40 dark:ring-cyan-400/30",
-                  "shadow-[0_0_24px_rgba(0,194,255,0.2)]",
+                  "ring-2 ring-primary/30",
+                  "shadow-[0_16px_34px_rgba(18,18,18,0.1)] dark:shadow-[0_16px_34px_rgba(0,0,0,0.24)]",
                 ]
               )}
               role="group"
@@ -122,7 +122,7 @@ export function MobileSlider({
               className={cn(
                 "h-2 rounded-full transition-all duration-300",
                 selectedIndex === index
-                  ? "w-8 bg-gradient-to-r from-cyan-500 to-blue-500"
+                  ? "w-8 bg-primary"
                   : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
               )}
               aria-label={`Go to slide ${index + 1}`}

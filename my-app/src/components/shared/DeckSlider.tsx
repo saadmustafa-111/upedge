@@ -117,9 +117,6 @@ export function DeckSlider({
       </div>
 
       {/* Edge Fade Masks */}
-      <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
       {/* Embla Viewport */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex flex-nowrap gap-4 touch-pan-y">
@@ -157,20 +154,15 @@ export function DeckSlider({
                 <div
                   className={cn(
                     "relative h-full rounded-3xl overflow-hidden",
-                    "bg-card/80 dark:bg-card/60 backdrop-blur-xl",
+                    "bg-card",
                     "transition-shadow duration-300",
                     isActive && !shouldReduceMotion && [
-                      "shadow-[0_8px_40px_rgba(0,194,255,0.15),0_2px_8px_rgba(0,0,0,0.1)]",
-                      "dark:shadow-[0_8px_40px_rgba(0,194,255,0.1),0_2px_8px_rgba(0,0,0,0.3)]",
+                      "shadow-[0_18px_38px_rgba(18,18,18,0.08)]",
+                      "dark:shadow-[0_18px_38px_rgba(0,0,0,0.24)]",
                     ],
                     !isActive && "shadow-lg"
                   )}
                 >
-                  {/* Top edge highlight (active only) */}
-                  {isActive && (
-                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
-                  )}
-                  
                   {/* Card content */}
                   {slide}
                 </div>
@@ -185,7 +177,7 @@ export function DeckSlider({
         <div className="mt-6 max-w-xs mx-auto">
           <div className="relative h-1 bg-muted/30 rounded-full overflow-hidden">
             <div
-              className="absolute inset-y-0 left-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-300 ease-out"
+              className="absolute inset-y-0 left-0 rounded-full bg-primary transition-all duration-300 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>

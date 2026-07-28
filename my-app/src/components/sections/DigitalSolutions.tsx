@@ -16,7 +16,6 @@ const digitalServices = [
     icon: ShoppingCart,
     title: "Smart POS & Billing System",
     oneLiner: "Transform your checkout with intelligent billing that tracks every sale, generates professional invoices, and provides real-time business insights.",
-    gradient: "from-blue-500 to-cyan-500",
     tag: "Most Popular",
     images: ["/POS/pexels-imin-technology-276315592-12935051.jpg", "/POS/pexels-imin-technology-276315592-12935071.jpg", "/POS/pexels-karola-g-5239882.jpg"],
     features: [
@@ -31,7 +30,6 @@ const digitalServices = [
     icon: Package,
     title: "Inventory & Stock Control",
     oneLiner: "Never run out of stock or overstock again. Automated inventory tracking with intelligent alerts and supplier management.",
-    gradient: "from-violet-500 to-purple-500",
     tag: "Essential",
     images: ["/Inventory/pexels-kampus-7289723.jpg", "/Inventory/pexels-tiger-lily-4483942.jpg", "/Inventory/pexels-winson5293-2701434.jpg"],
     features: [
@@ -46,7 +44,6 @@ const digitalServices = [
     icon: Pill,
     title: "Pharmacy Management Suite",
     oneLiner: "Complete pharmacy solution with batch tracking, expiry management, and regulatory compliance for medical stores.",
-    gradient: "from-emerald-500 to-teal-500",
     tag: "Specialized",
     images: ["/pharmacy/pexels-pixabay-38568.jpg", "/pharmacy/Tax-bills.png", "/pharmacy/pharmacy-1024x505.gif"],
     features: [
@@ -61,7 +58,6 @@ const digitalServices = [
     icon: Monitor,
     title: "eCommerce & Online Ordering",
     oneLiner: "Sell online through your own platform. Accept orders, manage deliveries, and grow your business beyond your physical store.",
-    gradient: "from-amber-500 to-orange-500",
     tag: "Growth Ready",
     images: ["/ecommerce/pexels-mikhail-nilov-6608888.jpg", "/ecommerce/pexels-n-voitkevich-6214386.jpg", "/ecommerce/pexels-shkrabaanthony-6207729.jpg"],
     features: [
@@ -76,7 +72,6 @@ const digitalServices = [
     icon: Globe,
     title: "Business Website (SEO-Ready)",
     oneLiner: "Get found on Google by local customers. Professional website with local SEO optimization to drive foot traffic to your store.",
-    gradient: "from-pink-500 to-rose-500",
     tag: "Local Reach",
     images: ["/websites/rumman-amin-qXZ7mSns_LM-unsplash.jpg", "/websites/taan-huyn-Vf39GOek8CM-unsplash.jpg", "/websites/pexels-pramodtiwari-17330220.jpg"],
     features: [
@@ -91,7 +86,6 @@ const digitalServices = [
     icon: Headphones,
     title: "Ongoing Support & Training",
     oneLiner: "We don't just build and leave. Get continuous support, staff training, updates, and technical assistance whenever needed.",
-    gradient: "from-indigo-500 to-blue-500",
     tag: "Peace of Mind",
     images: ["/support/altumcode-oZ61KFUQsus-unsplash.jpg", "/support/pexels-gustavo-fring-6720502.jpg", "/support/pexels-yankrukov-8867201.jpg"],
     features: [
@@ -184,11 +178,8 @@ Please guide me with the best solution for my business.`
   return (
     <section
       id="digital"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden scroll-mt-20"
+      className="relative overflow-hidden bg-zinc-50 py-16 sm:py-20 md:py-24 lg:py-32 scroll-mt-20 dark:bg-zinc-950"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent dark:via-cyan-400/5 pointer-events-none"></div>
-
       <div className="relative container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
@@ -199,10 +190,7 @@ Please guide me with the best solution for my business.`
           className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
-            <span className="text-primary dark:text-white">Digital Solutions </span>
-            <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              for Retail Businesses
-            </span>
+            <span className="text-zinc-950 dark:text-white">Digital Solutions for Retail Businesses</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-slate-300 leading-relaxed mb-4 sm:mb-6">
             Empower your retail business with professional software solutions. From smart POS systems to online ordering—we build custom tools that streamline operations, reduce manual work, and help you serve customers better.
@@ -215,7 +203,7 @@ Please guide me with the best solution for my business.`
               <Badge
                 key={item}
                 variant="outline"
-                className="text-xs bg-white/50 dark:bg-slate-800/50 border-cyan-500/30 text-foreground dark:text-slate-300"
+                className="border-zinc-200 bg-white text-foreground dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 text-xs"
               >
                 {item}
               </Badge>
@@ -241,8 +229,7 @@ Please guide me with the best solution for my business.`
               >
                 <div
                   className={cn(
-                    "relative h-full p-6 sm:p-8 rounded-3xl overflow-hidden",
-                    "bg-white/90 dark:bg-slate-900/90",
+                    "relative h-full overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900 sm:p-8",
                     "shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]",
                     "hover:shadow-[0_8px_40px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)]",
                     "transition-all duration-300 group"
@@ -254,7 +241,7 @@ Please guide me with the best solution for my business.`
                       <Badge
                         className={cn(
                           "text-[10px] sm:text-xs font-semibold px-2 py-0.5",
-                          `bg-gradient-to-r ${service.gradient} text-white border-0`
+                          "border-amber-200 bg-amber-50 text-amber-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-amber-300"
                         )}
                       >
                         {service.tag}
@@ -326,7 +313,7 @@ Please guide me with the best solution for my business.`
                   {/* Icon */}
                   <div className={cn(
                     "w-14 h-14 sm:w-16 sm:h-16 rounded-2xl mb-4 sm:mb-6 flex items-center justify-center transition-all duration-300",
-                    `bg-gradient-to-br ${service.gradient} text-white`,
+                    "bg-amber-50 text-amber-600 dark:bg-zinc-900 dark:text-amber-400",
                     "group-hover:scale-110"
                   )}>
                     <Icon className="w-7 h-7 sm:w-8 sm:h-8" />
@@ -349,7 +336,7 @@ Please guide me with the best solution for my business.`
                         key={idx}
                         className="flex items-start gap-2 text-sm sm:text-base text-foreground/80 dark:text-slate-200"
                       >
-                        <span className="text-cyan-600 dark:text-cyan-400 mt-0.5 shrink-0">✓</span>
+                        <span className="text-amber-600 dark:text-amber-400 mt-0.5 shrink-0">✓</span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -374,7 +361,7 @@ Please guide me with the best solution for my business.`
             {whatWeBuild.map((item) => (
               <Badge
                 key={item}
-                className="text-xs sm:text-sm bg-cyan-500/10 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border-cyan-500/30 dark:border-cyan-500/30"
+                className="text-xs sm:text-sm bg-amber-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border-amber-200 dark:border-zinc-800"
               >
                 {item}
               </Badge>
@@ -391,13 +378,13 @@ Please guide me with the best solution for my business.`
           className="max-w-4xl mx-auto mb-10 sm:mb-14"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
-            <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-cyan-500/5 to-blue-500/5 dark:from-cyan-500/10 dark:to-blue-500/10">
-              <div className="text-2xl sm:text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-1">100%</div>
+            <div className="rounded-[1.5rem] border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
+              <div className="text-2xl sm:text-3xl font-bold text-amber-600 dark:text-amber-400 mb-1">100%</div>
               <div className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400">Custom Built</div>
               <div className="text-[10px] sm:text-xs text-muted-foreground/80 dark:text-slate-500 mt-1">Tailored to your business</div>
             </div>
-            <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-blue-500/5 to-indigo-500/5 dark:from-blue-500/10 dark:to-indigo-500/10">
-              <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">24/7</div>
+            <div className="rounded-[1.5rem] border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
+              <div className="mb-1 text-2xl font-bold text-zinc-950 dark:text-white sm:text-3xl">24/7</div>
               <div className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400">Support Available</div>
               <div className="text-[10px] sm:text-xs text-muted-foreground/80 dark:text-slate-500 mt-1">We're here when you need us</div>
             </div>
@@ -416,8 +403,7 @@ Please guide me with the best solution for my business.`
             onClick={handleWhatsAppClick}
             className={cn(
               "w-full sm:w-auto rounded-xl font-semibold text-base sm:text-lg px-6 sm:px-8",
-              "bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600",
-              "text-white shadow-[0_4px_24px_rgba(6,182,212,0.3)] hover:shadow-[0_8px_32px_rgba(6,182,212,0.4)]",
+              "shadow-[0_12px_24px_rgba(18,18,18,0.14)] hover:shadow-[0_16px_30px_rgba(18,18,18,0.18)]",
               "transition-all duration-300"
             )}
             size="lg"
@@ -430,8 +416,8 @@ Please guide me with the best solution for my business.`
             variant="outline"
             className={cn(
               "w-full sm:w-auto rounded-xl font-semibold text-base sm:text-lg px-6 sm:px-8",
-              "bg-white/50 dark:bg-slate-800/50 border-2 border-white/40 dark:border-white/20",
-              "hover:bg-white/70 dark:hover:bg-slate-800/70 hover:border-cyan-500/40",
+              "bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800",
+              "hover:bg-white dark:hover:bg-zinc-900 hover:border-amber-300 dark:hover:border-zinc-700",
               "transition-all duration-300"
             )}
             size="lg"
@@ -448,7 +434,7 @@ Please guide me with the best solution for my business.`
           transition={{ duration: shouldReduceMotion ? 0.3 : 0.6, delay: shouldReduceMotion ? 0 : 0.5 }}
           className="text-center text-sm sm:text-base text-muted-foreground dark:text-slate-400"
         >
-          <span className="font-semibold text-cyan-600 dark:text-cyan-400">Security & Surveillance</span> is our primary expertise. Digital solutions are offered as complementary services for our business clients seeking comprehensive technology integration.
+          <span className="font-semibold text-amber-600 dark:text-amber-400">Security & Surveillance</span> is our primary expertise. Digital solutions are offered as complementary services for our business clients seeking comprehensive technology integration.
         </motion.p>
       </div>
     </section>

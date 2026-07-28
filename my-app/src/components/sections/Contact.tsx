@@ -34,7 +34,6 @@ const contactCards = [
     value: EMAIL,
     icon: Mail,
     href: `mailto:${EMAIL}`,
-    gradient: "from-cyan-500 to-blue-500",
   },
   {
     id: "phone1",
@@ -42,7 +41,6 @@ const contactCards = [
     value: PHONE_DISPLAY_PRIMARY,
     icon: PhoneIcon,
     href: `tel:${PHONE_PRIMARY}`,
-    gradient: "from-blue-500 to-indigo-500",
   },
   {
     id: "phone2",
@@ -50,7 +48,6 @@ const contactCards = [
     value: PHONE_DISPLAY_SECONDARY,
     icon: PhoneIcon,
     href: `tel:${PHONE_SECONDARY}`,
-    gradient: "from-indigo-500 to-purple-500",
   },
   {
     id: "address",
@@ -58,7 +55,6 @@ const contactCards = [
     value: ADDRESS,
     icon: MapPin,
     href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`,
-    gradient: "from-purple-500 to-pink-500",
   },
   {
     id: "facebook",
@@ -66,7 +62,6 @@ const contactCards = [
     value: `@${FACEBOOK_PAGE}`,
     icon: Facebook,
     href: `https://facebook.com/${FACEBOOK_PAGE}`,
-    gradient: "from-pink-500 to-cyan-500",
   },
   {
     id: "google",
@@ -74,11 +69,10 @@ const contactCards = [
     value: GOOGLE_BUSINESS_NAME,
     icon: MapPinned,
     href: `https://www.google.com/search?q=${encodeURIComponent(GOOGLE_BUSINESS_NAME)}`,
-    gradient: "from-cyan-500 to-blue-500",
   },
 ];
 
-const solutionTypes = ["Security", "Networking", "Solar"];
+const solutionTypes = ["Security", "Networking", "Access Control"];
 const spaceTypes = ["Home", "Retail", "Office", "Warehouse", "Educational"];
 
 export function Contact() {
@@ -118,11 +112,8 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden scroll-mt-20"
+      className="relative overflow-hidden bg-white py-16 sm:py-20 md:py-24 lg:py-32 scroll-mt-20 dark:bg-black"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent dark:via-cyan-400/5 pointer-events-none"></div>
-
       <div className="relative container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
@@ -133,10 +124,7 @@ export function Contact() {
           className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
-            <span className="text-primary dark:text-white">Get in </span>
-            <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              Touch
-            </span>
+            <span className="text-zinc-950 dark:text-white">Get in Touch</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-slate-300 leading-relaxed">
             Reach out for consultations, site surveys, or any questions about our solutions
@@ -165,10 +153,9 @@ export function Contact() {
                   rel={card.id === "facebook" || card.id === "google" || card.id === "address" ? "noopener noreferrer" : undefined}
                   className={cn(
                     "relative h-full p-6 cursor-pointer block",
-                    "rounded-3xl overflow-hidden",
-                    "bg-white/90 dark:bg-slate-900/90",
+                    "rounded-[1.75rem] overflow-hidden border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950",
                     "shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]",
-                    "hover:shadow-[0_12px_48px_rgba(0,194,255,0.15)] dark:hover:shadow-[0_12px_48px_rgba(0,194,255,0.2)]",
+                    "hover:shadow-[0_12px_28px_rgba(18,18,18,0.12)] dark:hover:shadow-[0_12px_28px_rgba(0,0,0,0.24)]",
                     "hover:-translate-y-1",
                     "transition-all duration-500 ease-out group"
                   )}
@@ -176,7 +163,7 @@ export function Contact() {
                   {/* Icon */}
                   <div className={cn(
                     "w-12 h-12 rounded-2xl mb-4 flex items-center justify-center transition-all duration-300",
-                    `bg-gradient-to-br ${card.gradient} text-white`,
+                    "bg-amber-50 text-amber-600 dark:bg-zinc-900 dark:text-amber-400",
                     "group-hover:scale-105"
                   )}>
                     <Icon className="w-6 h-6" />
@@ -207,14 +194,10 @@ export function Contact() {
           className="max-w-3xl mx-auto"
         >
           <div className={cn(
-            "relative overflow-hidden rounded-3xl backdrop-blur-2xl border-2 transition-all duration-300",
-            "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15",
-            "shadow-[0_8px_32px_rgba(0,194,255,0.15),inset_0_1px_2px_rgba(255,255,255,0.4)] dark:shadow-[0_8px_32px_rgba(0,194,255,0.1),inset_0_1px_2px_rgba(255,255,255,0.1)]",
+            "relative overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-950",
+            "shadow-[0_18px_40px_rgba(18,18,18,0.08)] dark:shadow-[0_18px_40px_rgba(0,0,0,0.22)]",
             "p-6 sm:p-8"
           )}>
-            {/* Top highlight */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 dark:via-white/30 to-transparent"></div>
-
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground dark:text-white mb-6">
               Send Project Details
             </h3>
@@ -231,10 +214,10 @@ export function Contact() {
                       key={solution}
                       onClick={() => setSelectedSolution(solution === selectedSolution ? null : solution)}
                       className={cn(
-                        "px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-xl border-2 transition-all duration-300",
+                        "px-4 py-2 rounded-full text-sm font-semibold border transition-all duration-300",
                         selectedSolution === solution
-                          ? "bg-cyan-500/20 dark:bg-cyan-500/20 border-cyan-500/50 dark:border-cyan-500/40 text-cyan-700 dark:text-cyan-300"
-                          : "bg-white/60 dark:bg-slate-800/60 border-white/40 dark:border-white/15 text-foreground dark:text-white hover:border-cyan-500/30"
+                          ? "bg-amber-50 dark:bg-zinc-900 border-amber-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100"
+                          : "bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-foreground dark:text-white hover:border-amber-300 dark:hover:border-zinc-700"
                       )}
                     >
                       {solution}
@@ -254,10 +237,10 @@ export function Contact() {
                       key={space}
                       onClick={() => setSelectedSpace(space === selectedSpace ? null : space)}
                       className={cn(
-                        "px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-xl border-2 transition-all duration-300",
+                        "px-4 py-2 rounded-full text-sm font-semibold border transition-all duration-300",
                         selectedSpace === space
-                          ? "bg-cyan-500/20 dark:bg-cyan-500/20 border-cyan-500/50 dark:border-cyan-500/40 text-cyan-700 dark:text-cyan-300"
-                          : "bg-white/60 dark:bg-slate-800/60 border-white/40 dark:border-white/15 text-foreground dark:text-white hover:border-cyan-500/30"
+                          ? "bg-amber-50 dark:bg-zinc-900 border-amber-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100"
+                          : "bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-foreground dark:text-white hover:border-amber-300 dark:hover:border-zinc-700"
                       )}
                     >
                       {space}
@@ -278,9 +261,9 @@ export function Contact() {
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   className={cn(
-                    "backdrop-blur-xl border-2",
-                    "bg-white/60 dark:bg-slate-800/60 border-white/40 dark:border-white/15",
-                    "focus:border-cyan-500/50 dark:focus:border-cyan-500/40"
+                    "border",
+                    "bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800",
+                    "focus:border-amber-500 dark:focus:border-amber-500"
                   )}
                 />
               </div>
@@ -297,9 +280,9 @@ export function Contact() {
                   value={note}
                   onChange={(e) => setNote(e.target.value)}
                   className={cn(
-                    "backdrop-blur-xl border-2 resize-none",
-                    "bg-white/60 dark:bg-slate-800/60 border-white/40 dark:border-white/15",
-                    "focus:border-cyan-500/50 dark:focus:border-cyan-500/40"
+                    "border resize-none",
+                    "bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800",
+                    "focus:border-amber-500 dark:focus:border-amber-500"
                   )}
                 />
               </div>
@@ -310,8 +293,7 @@ export function Contact() {
                   onClick={handleWhatsApp}
                   className={cn(
                     "w-full rounded-xl font-semibold",
-                    "bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600",
-                    "text-white shadow-[0_4px_24px_rgba(0,194,255,0.3)] hover:shadow-[0_8px_32px_rgba(0,194,255,0.4)]",
+                    "shadow-[0_12px_24px_rgba(18,18,18,0.14)] hover:shadow-[0_16px_30px_rgba(18,18,18,0.18)]",
                     "transition-all duration-300"
                   )}
                   size="lg"
@@ -324,8 +306,8 @@ export function Contact() {
                   variant="outline"
                   className={cn(
                     "w-full rounded-xl font-semibold backdrop-blur-xl",
-                    "bg-white/60 dark:bg-slate-800/60 border-2 border-white/40 dark:border-white/20",
-                    "hover:bg-white/70 dark:hover:bg-slate-800/70 hover:border-cyan-500/40",
+                    "bg-white dark:bg-zinc-950 border-2 border-zinc-200 dark:border-zinc-800",
+                    "hover:bg-white dark:hover:bg-zinc-900 hover:border-amber-300",
                     "transition-all duration-300"
                   )}
                   size="lg"

@@ -12,7 +12,6 @@ import {
   Camera,
   Wifi,
   Code,
-  Sun,
   Shield,
   Network,
   Smartphone,
@@ -26,7 +25,7 @@ import { MobileSlider } from "@/components/shared/MobileSlider";
 import { WHATSAPP_NUMBER, EMAIL } from "@/lib/constants";
 
 // Department Types
-type Department = "security" | "solar" | "networking" | "digital";
+type Department = "security" | "networking" | "digital";
 
 // Package Types
 interface Package {
@@ -39,7 +38,6 @@ interface Package {
   bestFor: string;
   includes: string[];
   technicalDetails?: string;
-  gradient: string;
 }
 
 // Security Packages
@@ -59,7 +57,6 @@ const securityPackages: Package[] = [
       "1 week storage",
     ],
     technicalDetails: "System recommendation based on budget + wiring preference",
-    gradient: "from-blue-500 to-cyan-500",
   },
   {
     id: "standard-security",
@@ -77,7 +74,6 @@ const securityPackages: Package[] = [
       "Professional installation",
     ],
     technicalDetails: "IP cameras recommended, Wi-Fi option available",
-    gradient: "from-cyan-500 to-blue-500",
   },
   {
     id: "recommended-security",
@@ -97,7 +93,6 @@ const securityPackages: Package[] = [
       "Free maintenance (3 months)",
     ],
     technicalDetails: "IP cameras best choice for quality + features",
-    gradient: "from-indigo-500 to-purple-500",
   },
   {
     id: "advanced-security",
@@ -116,86 +111,6 @@ const securityPackages: Package[] = [
       "24/7 support + maintenance",
     ],
     technicalDetails: "Advanced IP with analytics capabilities",
-    gradient: "from-purple-500 to-pink-500",
-  },
-];
-
-// Solar Packages
-const solarPackages: Package[] = [
-  {
-    id: "essential-solar",
-    name: "Essential Solar",
-    icon: Sun,
-    shortDesc: "1–2 kW",
-    customerFeeling: "I want backup for basics during load shedding.",
-    bestFor: "Small homes, startups needing emergency power",
-    includes: [
-      "1–2 kW solar system",
-      "Lights, fans, router backup",
-      "Phone charging",
-      "CCTV power backup",
-      "3–5 hours backup",
-      "Basic battery storage",
-    ],
-    technicalDetails: "Entry-level backup solution",
-    gradient: "from-yellow-500 to-orange-500",
-  },
-  {
-    id: "standard-solar",
-    name: "Standard Solar",
-    icon: Sun,
-    shortDesc: "3–5 kW",
-    customerFeeling: "I want to reduce my electricity bill significantly.",
-    bestFor: "Homes, small offices with moderate usage",
-    includes: [
-      "3–5 kW solar system",
-      "Lights, fans, TV, fridge",
-      "Small appliances",
-      "6–8 hours backup",
-      "Bill reduction 40–60%",
-      "Hybrid inverter option",
-    ],
-    technicalDetails: "Balanced backup + savings solution",
-    gradient: "from-orange-500 to-amber-500",
-  },
-  {
-    id: "recommended-solar",
-    name: "Recommended Solar",
-    icon: Sun,
-    recommended: true,
-    shortDesc: "6–10 kW",
-    customerFeeling: "I want strong usage coverage + net metering.",
-    bestFor: "Medium homes, shops with high consumption",
-    includes: [
-      "6–10 kW solar system",
-      "Full home/office coverage",
-      "Net metering ready",
-      "Bill reduction 70–90%",
-      "8+ hours backup",
-      "Premium panels + inverter",
-      "25-year panel warranty",
-    ],
-    technicalDetails: "Best value for long-term savings",
-    gradient: "from-amber-500 to-yellow-500",
-  },
-  {
-    id: "advanced-solar",
-    name: "Advanced Solar",
-    icon: Sun,
-    shortDesc: "10–20+ kW",
-    customerFeeling: "I want commercial-scale power independence.",
-    bestFor: "Large businesses, industrial facilities",
-    includes: [
-      "10–20+ kW system",
-      "Commercial scale coverage",
-      "Heavy appliances + AC",
-      "Net metering + grid tie",
-      "Battery bank for 24/7 operation",
-      "Monitoring system",
-      "ROI in 2–4 years",
-    ],
-    technicalDetails: "Enterprise-grade solar solution",
-    gradient: "from-rose-500 to-orange-500",
   },
 ];
 
@@ -216,7 +131,6 @@ const networkingPackages: Package[] = [
       "Speed optimization",
     ],
     technicalDetails: "Single router, basic coverage",
-    gradient: "from-green-500 to-teal-500",
   },
   {
     id: "standard-networking",
@@ -234,7 +148,6 @@ const networkingPackages: Package[] = [
       "Cable management",
     ],
     technicalDetails: "Router + unmanaged switch",
-    gradient: "from-teal-500 to-cyan-500",
   },
   {
     id: "recommended-networking",
@@ -254,7 +167,6 @@ const networkingPackages: Package[] = [
       "3 months support",
     ],
     technicalDetails: "Managed switch + multiple APs",
-    gradient: "from-cyan-500 to-blue-500",
   },
   {
     id: "advanced-networking",
@@ -273,7 +185,6 @@ const networkingPackages: Package[] = [
       "24/7 support + SLA",
     ],
     technicalDetails: "Enterprise equipment + management",
-    gradient: "from-blue-500 to-indigo-500",
   },
 ];
 
@@ -295,7 +206,6 @@ const digitalPackages: Package[] = [
       "Domain + hosting setup",
     ],
     technicalDetails: "5-page website + Google listing",
-    gradient: "from-violet-500 to-purple-500",
   },
   {
     id: "standard-digital",
@@ -313,7 +223,6 @@ const digitalPackages: Package[] = [
       "Training session",
     ],
     technicalDetails: "Website + basic management dashboard",
-    gradient: "from-purple-500 to-fuchsia-500",
   },
   {
     id: "recommended-digital",
@@ -333,7 +242,6 @@ const digitalPackages: Package[] = [
       "6 months support",
     ],
     technicalDetails: "Full custom system + integrations",
-    gradient: "from-fuchsia-500 to-pink-500",
   },
   {
     id: "advanced-digital",
@@ -352,7 +260,6 @@ const digitalPackages: Package[] = [
       "Scalable architecture",
     ],
     technicalDetails: "Enterprise ecosystem + cloud infrastructure",
-    gradient: "from-pink-500 to-rose-500",
   },
 ];
 
@@ -369,22 +276,19 @@ export function Blueprint() {
   // Department-specific options
   const [budgetFocus, setBudgetFocus] = useState(""); // For security
   const [cablingPreference, setCablingPreference] = useState(""); // For security
-  const [backupNeed, setBackupNeed] = useState(""); // For solar
   const [coverageNeed, setCoverageNeed] = useState(""); // For networking
   const [businessType, setBusinessType] = useState(""); // For digital
   const [mainGoal, setMainGoal] = useState(""); // For digital
 
   const departments = [
-    { id: "security" as Department, label: "Security", icon: Shield, color: "text-blue-600" },
-    { id: "solar" as Department, label: "Solar", icon: Sun, color: "text-yellow-600" },
-    { id: "networking" as Department, label: "Networking", icon: Wifi, color: "text-cyan-600" },
-    { id: "digital" as Department, label: "Digital", icon: Smartphone, color: "text-purple-600" },
+    { id: "security" as Department, label: "Security", icon: Shield, color: "text-amber-600 dark:text-amber-400" },
+    { id: "networking" as Department, label: "Networking", icon: Wifi, color: "text-amber-600 dark:text-amber-400" },
+    { id: "digital" as Department, label: "Digital", icon: Smartphone, color: "text-amber-600 dark:text-amber-400" },
   ];
 
   const getCurrentPackages = (): Package[] => {
     switch (selectedDepartment) {
       case "security": return securityPackages;
-      case "solar": return solarPackages;
       case "networking": return networkingPackages;
       case "digital": return digitalPackages;
     }
@@ -428,10 +332,6 @@ export function Blueprint() {
       if (recommendation) message += `*Recommended:* ${recommendation}\n`;
     }
 
-    if (selectedDepartment === "solar" && backupNeed) {
-      message += `\n*Backup Need:* ${backupNeed}\n`;
-    }
-
     if (selectedDepartment === "networking" && coverageNeed) {
       message += `\n*Coverage Need:* ${coverageNeed}\n`;
     }
@@ -462,18 +362,15 @@ export function Blueprint() {
       // For digital, only need business type, goal, and package
       return businessType && mainGoal && selectedPackage;
     }
-    // For physical departments (security, solar, networking)
+    // For physical departments (security, networking)
     return spaceType && size && selectedPackage;
   };
 
   return (
     <section
       id="blueprint"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden scroll-mt-20"
+      className="relative overflow-hidden bg-zinc-50 py-16 sm:py-20 md:py-24 lg:py-32 scroll-mt-20 dark:bg-zinc-950"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent dark:via-indigo-400/5 pointer-events-none"></div>
-
       <div className="relative container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
@@ -484,10 +381,7 @@ export function Blueprint() {
           className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
-            <span className="text-primary dark:text-white">30-Second </span>
-            <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              Blueprint
-            </span>
+            <span className="text-zinc-950 dark:text-white">30-Second Blueprint</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-slate-300 leading-relaxed">
             Answer a few quick questions and get an instant recommendation for your perfect system package.
@@ -503,11 +397,10 @@ export function Blueprint() {
           className="max-w-2xl mx-auto mb-8 sm:mb-12"
         >
           <div className={cn(
-            "relative p-1.5 sm:p-2 rounded-2xl backdrop-blur-2xl border-2 transition-all duration-300",
-            "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15",
-            "shadow-[0_4px_24px_rgba(0,194,255,0.1),inset_0_1px_2px_rgba(255,255,255,0.4)] dark:shadow-[0_4px_24px_rgba(0,194,255,0.08),inset_0_1px_2px_rgba(255,255,255,0.1)]"
+            "relative rounded-[1.5rem] border border-zinc-200 bg-white p-1.5 transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-900 sm:p-2",
+            "shadow-[0_12px_24px_rgba(18,18,18,0.06)] dark:shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
           )}>
-            <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
+            <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
               {departments.map((dept) => {
                 const Icon = dept.icon;
                 return (
@@ -520,8 +413,8 @@ export function Blueprint() {
                     className={cn(
                       "relative px-3 py-3 sm:px-4 sm:py-4 text-xs sm:text-sm font-semibold rounded-xl transition-all duration-300 flex flex-col items-center gap-1.5 sm:gap-2",
                       selectedDepartment === dept.id
-                        ? "bg-white/90 dark:bg-slate-800/80 text-primary dark:text-cyan-400 shadow-[0_2px_8px_rgba(0,194,255,0.2)] backdrop-blur-xl"
-                        : "text-muted-foreground hover:bg-white/50 dark:hover:bg-slate-800/40 hover:text-foreground"
+                        ? "bg-amber-50 text-zinc-950 shadow-[0_8px_18px_rgba(18,18,18,0.08)] dark:bg-zinc-900 dark:text-white"
+                        : "text-muted-foreground hover:bg-zinc-50 hover:text-foreground dark:hover:bg-zinc-900"
                     )}
                   >
                     <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -559,10 +452,10 @@ export function Blueprint() {
                         key={type}
                         onClick={() => setBusinessType(type)}
                         className={cn(
-                          "relative px-3 py-2.5 sm:px-4 sm:py-3 text-sm font-semibold rounded-xl backdrop-blur-2xl border-2 transition-all duration-300",
+                          "relative rounded-xl border px-3 py-2.5 text-sm font-semibold transition-all duration-300 sm:px-4 sm:py-3",
                           businessType === type
-                            ? "bg-white/70 dark:bg-slate-900/60 border-cyan-500/50 dark:border-cyan-500/30 text-primary dark:text-cyan-400 shadow-[0_4px_16px_rgba(0,194,255,0.2)]"
-                            : "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15 text-foreground dark:text-white hover:border-cyan-500/30"
+                            ? "border-amber-200 bg-amber-50 text-zinc-950 shadow-[0_10px_20px_rgba(18,18,18,0.08)] dark:border-zinc-700 dark:bg-zinc-900 dark:text-white"
+                            : "border-zinc-200 bg-white text-foreground hover:border-amber-300 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:hover:border-zinc-700"
                         )}
                       >
                         {type}
@@ -586,17 +479,17 @@ export function Blueprint() {
                         key={option.value}
                         onClick={() => setMainGoal(option.value)}
                         className={cn(
-                          "relative overflow-hidden rounded-xl sm:rounded-2xl backdrop-blur-2xl border-2 transition-all duration-300 p-3 sm:p-4",
+                          "relative overflow-hidden rounded-xl border p-3 transition-all duration-300 sm:rounded-2xl sm:p-4",
                           mainGoal === option.value
-                            ? "bg-white/70 dark:bg-slate-900/60 border-cyan-500/50 dark:border-cyan-500/30 shadow-[0_4px_24px_rgba(0,194,255,0.2)]"
-                            : "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15 hover:border-cyan-500/30 shadow-[0_4px_16px_rgba(0,194,255,0.08)]"
+                            ? "border-amber-200 bg-amber-50 shadow-[0_12px_24px_rgba(18,18,18,0.08)] dark:border-zinc-700 dark:bg-zinc-900"
+                            : "border-zinc-200 bg-white shadow-[0_8px_16px_rgba(18,18,18,0.05)] hover:border-amber-300 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700"
                         )}
                       >
                         <div className="text-center">
                           <div className={cn(
                             "text-sm font-bold",
                             mainGoal === option.value
-                              ? "text-primary dark:text-cyan-400"
+                              ? "text-zinc-950 dark:text-white"
                               : "text-foreground dark:text-white"
                           )}>
                             {option.label}
@@ -621,10 +514,10 @@ export function Blueprint() {
                         key={type}
                         onClick={() => setSpaceType(type)}
                         className={cn(
-                          "relative px-3 py-2.5 sm:px-4 sm:py-3 text-sm font-semibold rounded-xl backdrop-blur-2xl border-2 transition-all duration-300",
+                          "relative rounded-xl border px-3 py-2.5 text-sm font-semibold transition-all duration-300 sm:px-4 sm:py-3",
                           spaceType === type
-                            ? "bg-white/70 dark:bg-slate-900/60 border-cyan-500/50 dark:border-cyan-500/30 text-primary dark:text-cyan-400 shadow-[0_4px_16px_rgba(0,194,255,0.2)]"
-                            : "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15 text-foreground dark:text-white hover:border-cyan-500/30"
+                            ? "border-amber-200 bg-amber-50 text-zinc-950 shadow-[0_10px_20px_rgba(18,18,18,0.08)] dark:border-zinc-700 dark:bg-zinc-900 dark:text-white"
+                            : "border-zinc-200 bg-white text-foreground hover:border-amber-300 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:hover:border-zinc-700"
                         )}
                       >
                         {type}
@@ -644,17 +537,17 @@ export function Blueprint() {
                         key={sizeOption}
                         onClick={() => setSize(sizeOption)}
                         className={cn(
-                          "relative overflow-hidden rounded-xl sm:rounded-2xl backdrop-blur-2xl border-2 transition-all duration-300 p-3 sm:p-4",
+                          "relative overflow-hidden rounded-xl border p-3 transition-all duration-300 sm:rounded-2xl sm:p-4",
                           size === sizeOption
-                            ? "bg-white/70 dark:bg-slate-900/60 border-cyan-500/50 dark:border-cyan-500/30 shadow-[0_4px_24px_rgba(0,194,255,0.2)]"
-                            : "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15 hover:border-cyan-500/30 shadow-[0_4px_16px_rgba(0,194,255,0.08)]"
+                            ? "border-amber-200 bg-amber-50 shadow-[0_12px_24px_rgba(18,18,18,0.08)] dark:border-zinc-700 dark:bg-zinc-900"
+                            : "border-zinc-200 bg-white shadow-[0_8px_16px_rgba(18,18,18,0.05)] hover:border-amber-300 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700"
                         )}
                       >
                         <div className="text-center">
                           <div className={cn(
                             "text-sm font-bold",
                             size === sizeOption
-                              ? "text-primary dark:text-cyan-400"
+                              ? "text-zinc-950 dark:text-white"
                               : "text-foreground dark:text-white"
                           )}>
                             {sizeOption}
@@ -678,10 +571,10 @@ export function Blueprint() {
                     key={pkg.id}
                     onClick={() => setSelectedPackage(pkg.id)}
                     className={cn(
-                      "px-3 py-2 sm:px-4 sm:py-2.5 rounded-full text-sm font-semibold backdrop-blur-xl border-2 transition-all duration-300 relative",
+                      "relative rounded-full border px-3 py-2 text-sm font-semibold transition-all duration-300 sm:px-4 sm:py-2.5",
                       selectedPackage === pkg.id
-                        ? "bg-cyan-500/20 dark:bg-cyan-500/20 border-cyan-500/50 dark:border-cyan-500/40 text-cyan-700 dark:text-cyan-300 shadow-[0_4px_16px_rgba(0,194,255,0.2)]"
-                        : "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15 text-foreground dark:text-white hover:border-cyan-500/30"
+                        ? "bg-amber-50 dark:bg-zinc-900 border-amber-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 shadow-[0_10px_20px_rgba(18,18,18,0.08)]"
+                        : "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-foreground dark:text-white hover:border-amber-300 dark:hover:border-zinc-700"
                     )}
                   >
                     {pkg.name}
@@ -714,10 +607,10 @@ export function Blueprint() {
                           key={option.value}
                           onClick={() => setBudgetFocus(option.value)}
                           className={cn(
-                            "px-3 py-1.5 rounded-full text-xs font-medium border-2 transition-all",
+                            "rounded-full border px-3 py-1.5 text-xs font-medium transition-all",
                             budgetFocus === option.value
-                              ? "bg-cyan-500/10 border-cyan-500/40 text-cyan-700 dark:text-cyan-300"
-                              : "bg-white/40 dark:bg-slate-800/40 border-white/30 dark:border-white/10 text-foreground dark:text-white hover:border-cyan-500/30"
+                              ? "bg-amber-50 border-amber-200 text-amber-700 dark:bg-zinc-900 dark:border-zinc-700 dark:text-amber-300"
+                              : "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-foreground dark:text-white hover:border-amber-300 dark:hover:border-zinc-700"
                           )}
                         >
                           {option.label}
@@ -738,10 +631,10 @@ export function Blueprint() {
                           key={option.value}
                           onClick={() => setCablingPreference(option.value)}
                           className={cn(
-                            "px-3 py-1.5 rounded-full text-xs font-medium border-2 transition-all",
+                            "rounded-full border px-3 py-1.5 text-xs font-medium transition-all",
                             cablingPreference === option.value
-                              ? "bg-cyan-500/10 border-cyan-500/40 text-cyan-700 dark:text-cyan-300"
-                              : "bg-white/40 dark:bg-slate-800/40 border-white/30 dark:border-white/10 text-foreground dark:text-white hover:border-cyan-500/30"
+                              ? "bg-amber-50 border-amber-200 text-amber-700 dark:bg-zinc-900 dark:border-zinc-700 dark:text-amber-300"
+                              : "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-foreground dark:text-white hover:border-amber-300 dark:hover:border-zinc-700"
                           )}
                         >
                           {option.label}
@@ -749,34 +642,6 @@ export function Blueprint() {
                       ))}
                     </div>
                   </div>
-                </div>
-              </div>
-            )}
-
-            {selectedDepartment === "solar" && spaceType && size && (
-              <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-foreground dark:text-white">
-                  4. Backup Goal (Optional)
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { value: "3-5hours", label: "3–5 hours" },
-                    { value: "6-8hours", label: "6–8 hours" },
-                    { value: "daytime", label: "Daytime savings" },
-                  ].map((option) => (
-                    <button
-                      key={option.value}
-                      onClick={() => setBackupNeed(option.value)}
-                      className={cn(
-                        "px-3 py-1.5 rounded-full text-xs font-medium border-2 transition-all",
-                        backupNeed === option.value
-                          ? "bg-cyan-500/10 border-cyan-500/40 text-cyan-700 dark:text-cyan-300"
-                          : "bg-white/40 dark:bg-slate-800/40 border-white/30 dark:border-white/10 text-foreground dark:text-white hover:border-cyan-500/30"
-                      )}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
                 </div>
               </div>
             )}
@@ -796,10 +661,10 @@ export function Blueprint() {
                       key={option.value}
                       onClick={() => setCoverageNeed(option.value)}
                       className={cn(
-                        "px-3 py-1.5 rounded-full text-xs font-medium border-2 transition-all",
+                        "rounded-full border px-3 py-1.5 text-xs font-medium transition-all",
                         coverageNeed === option.value
-                          ? "bg-cyan-500/10 border-cyan-500/40 text-cyan-700 dark:text-cyan-300"
-                          : "bg-white/40 dark:bg-slate-800/40 border-white/30 dark:border-white/10 text-foreground dark:text-white hover:border-cyan-500/30"
+                          ? "bg-amber-50 border-amber-200 text-amber-700 dark:bg-zinc-900 dark:border-zinc-700 dark:text-amber-300"
+                          : "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-foreground dark:text-white hover:border-amber-300 dark:hover:border-zinc-700"
                       )}
                     >
                       {option.label}
@@ -818,17 +683,13 @@ export function Blueprint() {
             transition={{ duration: shouldReduceMotion ? 0.3 : 0.6 }}
           >
             <div className={cn(
-              "lg:sticky lg:top-24 relative overflow-hidden rounded-3xl backdrop-blur-2xl border-2 transition-all duration-300",
-              "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15",
-              "shadow-[0_8px_32px_rgba(0,194,255,0.15),inset_0_1px_2px_rgba(255,255,255,0.4)] dark:shadow-[0_8px_32px_rgba(0,194,255,0.1),inset_0_1px_2px_rgba(255,255,255,0.1)]"
+              "relative overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-900 lg:sticky lg:top-24",
+              "shadow-[0_18px_40px_rgba(18,18,18,0.08)] dark:shadow-[0_18px_40px_rgba(0,0,0,0.22)]"
             )}>
-              {/* Top highlight */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/60 dark:via-white/30 to-transparent pointer-events-none"></div>
-
               <div className="relative p-5 sm:p-6 lg:p-8">
                 {/* Header */}
                 <div className="mb-5 sm:mb-6">
-                  <Badge className="mb-2 sm:mb-3 text-xs sm:text-sm bg-cyan-500/15 dark:bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border-cyan-500/30 dark:border-cyan-500/30">
+                  <Badge className="mb-2 border-amber-200 bg-amber-50 text-xs text-amber-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-amber-300 sm:mb-3 sm:text-sm">
                     {selectedPackage ? "Your Selection" : "Instant Recommendation"}
                   </Badge>
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground dark:text-white">
@@ -838,7 +699,7 @@ export function Blueprint() {
                   </h3>
                 </div>
 
-                <Separator className="mb-5 sm:mb-6 bg-gradient-to-r from-transparent via-border dark:via-slate-600 to-transparent" />
+                <Separator className="mb-5 sm:mb-6 bg-border" />
 
                 {/* Results */}
                 {selectedPackage ? (
@@ -855,7 +716,7 @@ export function Blueprint() {
                               <div className="text-xs sm:text-sm text-muted-foreground dark:text-slate-400 mb-1">
                                 Package Type
                               </div>
-                              <div className="text-2xl sm:text-3xl font-bold text-primary dark:text-cyan-400">
+                              <div className="text-2xl sm:text-3xl font-bold text-zinc-950 dark:text-white">
                                 {pkg.shortDesc}
                               </div>
                             </div>
@@ -867,7 +728,7 @@ export function Blueprint() {
                               <div className="space-y-2">
                                 {pkg.includes.map((item, idx) => (
                                   <div key={idx} className="flex items-start gap-2">
-                                    <Check className="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" />
+                                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                                     <span className="text-xs sm:text-sm text-foreground dark:text-white">
                                       {item}
                                     </span>
@@ -888,11 +749,11 @@ export function Blueprint() {
                             )}
 
                             {getSystemRecommendation() && (
-                              <div className="p-4 rounded-xl bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-2 border-cyan-500/20">
+                              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200">
                                 <div className="flex items-start gap-2">
-                                  <Zap className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
+                                  <Zap className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
                                   <div>
-                                    <div className="text-xs font-semibold text-cyan-700 dark:text-cyan-300 mb-1">
+                                    <div className="mb-1 text-xs font-semibold text-amber-700 dark:text-amber-300">
                                       Smart Recommendation
                                     </div>
                                     <div className="text-sm text-foreground dark:text-white">
@@ -903,7 +764,7 @@ export function Blueprint() {
                               </div>
                             )}
 
-                            <div className="text-xs italic text-muted-foreground dark:text-slate-400 border-l-2 border-cyan-500/30 pl-3">
+                            <div className="border-l-2 border-amber-300 pl-3 text-xs italic text-muted-foreground dark:border-zinc-700 dark:text-slate-400">
                               "{pkg.customerFeeling}"
                             </div>
 
@@ -920,7 +781,7 @@ export function Blueprint() {
                       })()}
                     </div>
 
-                    <Separator className="my-5 sm:my-6 bg-gradient-to-r from-transparent via-border dark:via-slate-600 to-transparent" />
+                    <Separator className="my-5 bg-border sm:my-6" />
 
                     {/* CTAs */}
                     {isFormComplete() && (
@@ -929,8 +790,7 @@ export function Blueprint() {
                           onClick={handleWhatsApp}
                           className={cn(
                             "w-full rounded-xl font-semibold text-sm sm:text-base",
-                            "bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600",
-                            "text-white shadow-[0_4px_24px_rgba(0,194,255,0.3)] hover:shadow-[0_8px_32px_rgba(0,194,255,0.4)]",
+                            "shadow-[0_12px_24px_rgba(18,18,18,0.14)] hover:shadow-[0_16px_30px_rgba(18,18,18,0.18)]",
                             "transition-all duration-300"
                           )}
                           size="lg"
@@ -942,9 +802,9 @@ export function Blueprint() {
                           onClick={handleEmail}
                           variant="outline"
                           className={cn(
-                            "w-full rounded-xl font-semibold backdrop-blur-xl text-sm sm:text-base",
-                            "bg-white/50 dark:bg-slate-800/50 border-2 border-white/40 dark:border-white/20",
-                            "hover:bg-white/70 dark:hover:bg-slate-800/70 hover:border-cyan-500/40",
+                            "w-full rounded-xl border-2 font-semibold text-sm sm:text-base",
+                            "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800",
+                            "hover:bg-white dark:hover:bg-zinc-900 hover:border-amber-300 dark:hover:border-zinc-700",
                             "transition-all duration-300"
                           )}
                           size="lg"

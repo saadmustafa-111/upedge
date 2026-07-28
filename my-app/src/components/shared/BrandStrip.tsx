@@ -39,7 +39,7 @@ export function BrandStrip({ variant = "default", showTitle = true }: BrandStrip
         >
           <h3
             className={cn(
-              "font-bold text-foreground dark:text-white mb-2",
+              "font-bold text-zinc-900 dark:text-zinc-100 mb-2",
               isCompact ? "text-xl sm:text-2xl" : "text-2xl sm:text-3xl"
             )}
           >
@@ -47,7 +47,7 @@ export function BrandStrip({ variant = "default", showTitle = true }: BrandStrip
           </h3>
           <p
             className={cn(
-              "text-muted-foreground dark:text-slate-300 leading-relaxed",
+              "text-zinc-600 dark:text-zinc-300 leading-relaxed",
               isCompact ? "text-sm" : "text-sm sm:text-base"
             )}
           >
@@ -88,7 +88,7 @@ export function BrandStrip({ variant = "default", showTitle = true }: BrandStrip
               </div>
               <span className={cn(
                 "text-center font-medium transition-colors duration-300",
-                "text-foreground/60 dark:text-slate-400 group-hover:text-foreground dark:group-hover:text-white",
+                "text-zinc-500 dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white",
                 isCompact ? "text-xs" : "text-sm"
               )}>
                 {brand.name}
@@ -130,7 +130,7 @@ export function BrandStrip({ variant = "default", showTitle = true }: BrandStrip
               </div>
               <span className={cn(
                 "text-center font-medium",
-                "text-foreground/60 dark:text-slate-400",
+                "text-zinc-500 dark:text-zinc-400",
                 isCompact ? "text-xs" : "text-sm"
               )}>
                 {brand.name}

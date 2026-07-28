@@ -97,19 +97,16 @@ function FaqAccordion({ items }: { items: typeof faqItems }) {
           key={item.id}
           value={item.id}
           className={cn(
-            "relative rounded-2xl backdrop-blur-2xl border-2 overflow-hidden transition-all duration-300",
-            "bg-white/60 dark:bg-slate-900/50 border-white/40 dark:border-white/15",
-            "shadow-[0_4px_16px_rgba(0,194,255,0.08)] hover:shadow-[0_8px_24px_rgba(0,194,255,0.12)]",
-            openItem === item.id && "border-cyan-500/40 dark:border-cyan-500/30"
+            "relative overflow-hidden rounded-[1.5rem] border transition-all duration-300",
+            "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800",
+            "shadow-[0_4px_16px_rgba(18,18,18,0.05)] hover:shadow-[0_8px_24px_rgba(18,18,18,0.08)]",
+            openItem === item.id && "border-zinc-300 dark:border-zinc-700"
           )}
         >
-          {/* Top highlight */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/60 dark:via-white/30 to-transparent pointer-events-none"></div>
-
           <div className="relative">
             <AccordionTrigger className="px-5 py-4 hover:no-underline group">
               <div className="flex items-start gap-3 text-left w-full">
-                <HelpCircle className="w-5 h-5 text-cyan-500 dark:text-cyan-400 shrink-0 mt-0.5" />
+                <HelpCircle className="mt-0.5 h-5 w-5 shrink-0 text-zinc-950 dark:text-white" />
                 <span className="text-sm sm:text-base font-semibold text-foreground dark:text-white pr-2">
                   {item.question}
                 </span>
@@ -124,7 +121,7 @@ function FaqAccordion({ items }: { items: typeof faqItems }) {
                   animate={{ scaleX: 1, opacity: 1 }}
                   exit={{ scaleX: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="absolute left-5 right-5 bottom-0 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 origin-left"
+                  className="absolute left-5 right-5 bottom-0 h-0.5 bg-zinc-900 origin-left dark:bg-white"
                   style={{ transformOrigin: "left" }}
                 />
               )}
@@ -145,7 +142,7 @@ function FaqAccordion({ items }: { items: typeof faqItems }) {
               }
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="pl-8 text-sm sm:text-base text-muted-foreground dark:text-slate-300 leading-relaxed"
+              className="pl-8 text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed"
             >
               {item.answer}
             </motion.div>
@@ -162,11 +159,8 @@ export function Faq() {
   return (
     <section
       id="faq"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden scroll-mt-20"
+      className="relative overflow-hidden bg-zinc-50 py-16 sm:py-20 md:py-24 lg:py-32 scroll-mt-20 dark:bg-zinc-950"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent dark:via-cyan-400/5 pointer-events-none"></div>
-
       <div className="relative container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
@@ -177,12 +171,9 @@ export function Faq() {
           className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
-            <span className="text-primary dark:text-white">Frequently Asked </span>
-            <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              Questions
-            </span>
+            <span className="text-zinc-950 dark:text-white">Frequently Asked Questions</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-700 dark:text-zinc-300 leading-relaxed">
             Quick answers before you request a site survey.
           </p>
         </motion.div>
@@ -231,20 +222,15 @@ export function Faq() {
         >
           <div
             className={cn(
-              "relative rounded-3xl backdrop-blur-2xl border-2 p-8 sm:p-10 text-center transition-all duration-300",
-              "bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-indigo-500/10 dark:from-cyan-500/10 dark:via-blue-500/10 dark:to-indigo-500/10",
-              "border-cyan-500/30 dark:border-cyan-500/20",
-              "shadow-[0_8px_32px_rgba(0,194,255,0.15)] dark:shadow-[0_8px_32px_rgba(0,194,255,0.1)]"
+              "rounded-[1.75rem] border border-zinc-200 bg-white p-8 text-center transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-900 sm:p-10",
+              "shadow-[0_18px_40px_rgba(18,18,18,0.06)] dark:shadow-[0_18px_40px_rgba(0,0,0,0.22)]"
             )}
           >
-            {/* Top highlight */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 dark:via-cyan-400/30 to-transparent pointer-events-none"></div>
-
             <div className="mb-6">
               <h3 className="text-xl sm:text-2xl font-bold text-foreground dark:text-white mb-3">
                 Still unsure?
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground dark:text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
                 Send us your space details and we'll suggest the right setup.
               </p>
             </div>
@@ -253,8 +239,7 @@ export function Faq() {
               asChild
               className={cn(
                 "rounded-xl font-semibold",
-                "bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600",
-                "text-white shadow-[0_4px_24px_rgba(0,194,255,0.3)] hover:shadow-[0_8px_32px_rgba(0,194,255,0.4)]",
+                "bg-primary text-primary-foreground",
                 "transition-all duration-300"
               )}
               size="lg"

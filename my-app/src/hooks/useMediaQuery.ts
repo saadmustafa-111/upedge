@@ -8,11 +8,13 @@ export function useMediaQuery(query: string): boolean {
 
   useEffect(() => {
     setMounted(true);
-    const media = window.matchMedia(query);
-    
-    if (media.matches !== matches) {
-      setMatches(media.matches);
+
+    if (typeof window === "undefined") {
+      return;
     }
+
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
 
     const listener = (event: MediaQueryListEvent) => {
       setMatches(event.matches);
@@ -28,7 +30,7 @@ export function useMediaQuery(query: string): boolean {
       media.addListener(listener);
       return () => media.removeListener(listener);
     }
-  }, [matches, query]);
+  }, [query]);
 
   // Return false during SSR and initial client render to avoid hydration mismatch
   return mounted ? matches : false;

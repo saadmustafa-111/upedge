@@ -61,7 +61,7 @@ const reviews = [
     name: "Rashid Khan",
     role: "Warehouse Manager",
     rating: 5,
-    text: "Excellent solar installation service. The team conducted a thorough site assessment and designed a system perfectly suited to our needs. The ROI analysis was detailed and the installation was completed on schedule.",
+    text: "Excellent CCTV installation service. The team conducted a thorough site assessment and designed a setup that fit our warehouse monitoring needs perfectly. The installation was neat, professional, and completed on schedule.",
     offset: 20,
   },
   {
@@ -80,11 +80,8 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden scroll-mt-20"
+      className="relative overflow-hidden bg-white py-16 sm:py-20 md:py-24 lg:py-32 scroll-mt-20 dark:bg-black"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent dark:via-amber-400/5 pointer-events-none"></div>
-
       <div className="relative container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
@@ -95,12 +92,9 @@ export function Testimonials() {
           className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
-            <span className="text-primary dark:text-white">Client </span>
-            <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              Testimonials
-            </span>
+            <span className="text-zinc-950 dark:text-white">Client Testimonials</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-700 dark:text-zinc-200 leading-relaxed">
             Clean installation, clear guidance, and support you can reach.
           </p>
         </motion.div>
@@ -130,50 +124,32 @@ export function Testimonials() {
                 "rounded-3xl overflow-hidden",
                 "bg-white/90 dark:bg-slate-900/90",
                 "shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]",
-                "hover:shadow-[0_12px_48px_rgba(0,194,255,0.15)] dark:hover:shadow-[0_12px_48px_rgba(0,194,255,0.2)]",
+                "hover:shadow-[0_12px_48px_rgba(18,18,18,0.12)] dark:hover:shadow-[0_12px_48px_rgba(0,0,0,0.24)]",
                 "hover:-translate-y-1",
                 "transition-all duration-500 ease-out"
               )}>
                 {/* Shimmer effect on view */}
-                {!shouldReduceMotion && (
-                  <motion.div
-                    initial={{ x: "-200%", opacity: 0 }}
-                    whileInView={{ x: "200%", opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 1.5,
-                      delay: index * 0.15,
-                      ease: "easeInOut",
-                    }}
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-200/20 dark:via-amber-400/10 to-transparent pointer-events-none"
-                    style={{
-                      maskImage:
-                        "linear-gradient(to right, transparent, black, transparent)",
-                    }}
-                  />
-                )}
-
                 {/* Stars */}
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-4 h-4 fill-amber-400 text-amber-400 dark:fill-amber-500 dark:text-amber-500"
+                      className="h-4 w-4 fill-primary text-primary"
                     />
                   ))}
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-sm sm:text-base text-foreground dark:text-slate-200 leading-relaxed mb-6 min-h-[120px]">
+                <blockquote className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6 min-h-[120px]">
                   "{review.text}"
                 </blockquote>
 
                 {/* Author */}
                 <div className="mt-auto pt-4 border-t border-border/20 dark:border-slate-700/20">
-                  <div className="font-semibold text-foreground dark:text-white">
+                  <div className="font-semibold text-zinc-950 dark:text-white">
                     {review.name}
                   </div>
-                  <div className="text-sm text-muted-foreground dark:text-slate-400">
+                  <div className="text-sm text-zinc-500 dark:text-zinc-400">
                     {review.role}
                   </div>
                 </div>

@@ -1,12 +1,12 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
+import { Laptop, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
-  const { setTheme, resolvedTheme } = useTheme();
+  const { setTheme, theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -18,19 +18,24 @@ export function ThemeToggle() {
       <Button
         variant="ghost"
         size="icon"
-        className="h-9 w-9 rounded-full hover:bg-accent/10"
+        className="h-11 w-11 rounded-full border border-zinc-200 bg-white/95 text-zinc-900 shadow-[0_8px_20px_rgba(18,18,18,0.06)] hover:bg-zinc-100 dark:border-zinc-800 dark:bg-black/95 dark:text-zinc-100 dark:hover:bg-zinc-900"
         disabled
       >
-        <Sun className="h-4 w-4" />
+        <Laptop className="h-[1.05rem] w-[1.05rem]" />
       </Button>
     );
   }
 
-  const isDark = resolvedTheme === "dark";
+  const selectedTheme = (theme as "system" | "light" | "dark" | undefined) ?? "system";
+  const currentTheme = selectedTheme === "system" ? resolvedTheme ?? "light" : selectedTheme;
+  const isDark = currentTheme === "dark";
+  const label =
+    selectedTheme === "system"
+      ? `Theme: System (${currentTheme})`
+      : `Theme: ${currentTheme}`;
 
   const handleToggle = () => {
-    const newTheme = isDark ? "light" : "dark";
-    setTheme(newTheme);
+    setTheme(isDark ? "light" : "dark");
   };
 
   return (
@@ -38,11 +43,13 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={handleToggle}
-      className="h-9 w-9 rounded-full hover:bg-accent/10 transition-all cursor-pointer"
-      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+      className="h-11 w-11 rounded-full border border-zinc-200 bg-white/95 text-zinc-900 shadow-[0_8px_20px_rgba(18,18,18,0.06)] transition-all hover:bg-zinc-100 dark:border-zinc-800 dark:bg-black/95 dark:text-zinc-100 dark:hover:bg-zinc-900 cursor-pointer"
+      aria-label={`${label}. Activate to switch theme mode.`}
+      title={label}
     >
-      <Sun className="h-[1.1rem] w-[1.1rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-[1.1rem] w-[1.1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      {selectedTheme === "system" && <Laptop className="h-[1.05rem] w-[1.05rem]" />}
+      {selectedTheme !== "system" && !isDark && <Sun className="h-[1.05rem] w-[1.05rem]" />}
+      {selectedTheme !== "system" && isDark && <Moon className="h-[1.05rem] w-[1.05rem]" />}
       <span className="sr-only">Toggle theme</span>
     </Button>
   );
