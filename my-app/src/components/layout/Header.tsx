@@ -57,13 +57,13 @@ export function Header() {
         <div className="container mx-auto px-2.5 py-3 sm:px-4">
           <div
             className={cn(
-              "relative mx-auto flex max-w-[1400px] items-center justify-between gap-2 transition-all duration-500 sm:gap-3 md:gap-4",
+              "mx-auto flex max-w-[1400px] items-center gap-2 transition-all duration-500 sm:gap-3 md:gap-4",
               isScrolled ? "min-h-[4.1rem]" : "min-h-[4.5rem]"
             )}
           >
             <ScrollLink
               to="home"
-              className="group flex min-w-0 flex-1 items-center gap-2 pr-[6.9rem] cursor-pointer sm:gap-2.5 sm:pr-[7.35rem] lg:pr-0"
+              className="group flex min-w-0 flex-1 items-center gap-2 pr-2 cursor-pointer sm:gap-2.5"
             >
               <div
                 className={cn(
@@ -83,19 +83,19 @@ export function Header() {
                 <span
                   className={cn(
                     "truncate font-semibold leading-none tracking-tight text-zinc-900 transition-all duration-500 dark:text-zinc-100",
-                    isScrolled ? "max-w-[7.5rem] text-[0.82rem] min-[380px]:max-w-[8.8rem] min-[380px]:text-[0.84rem] sm:max-w-[13rem] sm:text-[0.95rem] md:max-w-none md:text-[0.95rem]" : "max-w-[8.5rem] text-[0.76rem] min-[380px]:max-w-[10.5rem] min-[380px]:text-[0.78rem] sm:max-w-[13rem] sm:text-[1rem] md:max-w-none md:text-lg lg:text-[1.22rem]"
+                    isScrolled
+                      ? "max-w-[11rem] text-[0.82rem] min-[380px]:max-w-[12.5rem] min-[380px]:text-[0.84rem] sm:max-w-[13rem] sm:text-[0.95rem] md:max-w-none md:text-[0.95rem]"
+                      : "max-w-[11.5rem] text-[0.76rem] min-[380px]:max-w-[13rem] min-[380px]:text-[0.78rem] sm:max-w-[13rem] sm:text-[1rem] md:max-w-none md:text-lg lg:text-[1.22rem]"
                   )}
                 >
-                  <span className="min-[380px]:hidden">UpEdge</span>
-                  <span className="hidden min-[380px]:inline sm:hidden">UpEdge Tech</span>
-                  <span className="hidden sm:inline">{SITE_NAME}</span>
+                  {SITE_NAME}
                 </span>
               </div>
             </ScrollLink>
 
             <nav
               className={cn(
-                "hidden lg:flex items-center gap-0.5 rounded-full transition-all duration-500",
+                "hidden shrink-0 lg:flex items-center gap-0.5 rounded-full transition-all duration-500",
                 isScrolled
                   ? "border border-zinc-200 bg-white shadow-[0_10px_30px_rgba(18,18,18,0.06)] dark:border-zinc-800 dark:bg-black dark:shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
                   : "bg-white/95 shadow-none dark:bg-black/95",
@@ -124,7 +124,7 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="hidden shrink-0 items-center gap-2 lg:flex">
+            <div className="ml-auto hidden shrink-0 items-center gap-2 lg:flex">
               <ThemeToggle />
 
               <Button
@@ -139,7 +139,7 @@ export function Header() {
               </Button>
             </div>
 
-            <div className="absolute right-0 top-1/2 flex -translate-y-1/2 items-center justify-end gap-1.5 sm:gap-2 lg:hidden">
+            <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-2 lg:hidden">
               <ThemeToggle />
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild>

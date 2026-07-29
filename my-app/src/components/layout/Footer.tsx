@@ -24,7 +24,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-zinc-800 bg-zinc-950 pt-14 pb-8 text-white sm:pt-16 sm:pb-10 dark:border-zinc-300 dark:bg-zinc-100 dark:text-black">
+    <footer className="relative overflow-x-clip border-t border-zinc-800 bg-zinc-950 pt-14 pb-8 text-white sm:pt-16 sm:pb-10 dark:border-zinc-300 dark:bg-zinc-100 dark:text-black">
       <div className="container relative mx-auto px-4 sm:px-6">
         <div className="mx-auto max-w-7xl space-y-10 sm:space-y-12">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)_minmax(0,1fr)] lg:items-start">
@@ -58,17 +58,17 @@ export function Footer() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[52px] items-center justify-start gap-3 rounded-[14px] border border-zinc-700 bg-zinc-900 px-[18px] py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 dark:border-zinc-300 dark:bg-white dark:text-black dark:hover:bg-zinc-50"
+                  className="inline-flex min-h-[52px] max-w-full items-center justify-start gap-3 rounded-[14px] border border-zinc-700 bg-zinc-900 px-[18px] py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 dark:border-zinc-300 dark:bg-white dark:text-black dark:hover:bg-zinc-50"
                 >
                   <MessageCircle className="h-4 w-4 shrink-0 text-white dark:text-black" />
-                  <span className="whitespace-nowrap">WhatsApp for Quick Quote</span>
+                  <span className="min-w-0 break-words">WhatsApp for Quick Quote</span>
                 </a>
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="inline-flex min-h-[52px] items-center justify-start gap-3 rounded-[14px] border border-zinc-700 bg-zinc-900 px-[18px] py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 dark:border-zinc-300 dark:bg-white dark:text-black dark:hover:bg-zinc-50"
+                  className="inline-flex min-h-[52px] max-w-full items-center justify-start gap-3 rounded-[14px] border border-zinc-700 bg-zinc-900 px-[18px] py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 dark:border-zinc-300 dark:bg-white dark:text-black dark:hover:bg-zinc-50"
                 >
                   <Mail className="h-4 w-4 shrink-0 text-white dark:text-black" />
-                  <span className="whitespace-nowrap text-[0.92rem] sm:text-sm">{EMAIL}</span>
+                  <span className="min-w-0 break-all text-[0.92rem] sm:text-sm">{EMAIL}</span>
                 </a>
               </div>
             </div>
@@ -104,9 +104,9 @@ export function Footer() {
                     <Phone className="mt-0.5 h-4 w-4 shrink-0 text-zinc-300 dark:text-zinc-700" />
                     <span>{PHONE_DISPLAY_SECONDARY}</span>
                   </a>
-                  <a href={`mailto:${EMAIL}`} className="flex items-start gap-3 transition hover:text-white dark:hover:text-black">
+                  <a href={`mailto:${EMAIL}`} className="flex min-w-0 items-start gap-3 transition hover:text-white dark:hover:text-black">
                     <Mail className="mt-0.5 h-4 w-4 shrink-0 text-zinc-300 dark:text-zinc-700" />
-                    <span className="whitespace-nowrap">{EMAIL}</span>
+                    <span className="min-w-0 break-all">{EMAIL}</span>
                   </a>
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`}
@@ -115,7 +115,7 @@ export function Footer() {
                     className="flex items-start gap-3 transition hover:text-white dark:hover:text-black"
                   >
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-zinc-300 dark:text-zinc-700" />
-                    <span>{ADDRESS}</span>
+                    <span className="min-w-0 break-words">{ADDRESS}</span>
                   </a>
                   <a
                     href={`https://facebook.com/${FACEBOOK_PAGE}`}

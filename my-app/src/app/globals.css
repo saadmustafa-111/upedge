@@ -114,12 +114,14 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body), system-ui, sans-serif;
     background-color: var(--background);
+    overflow-x: clip;
   }
 
   ::selection {
