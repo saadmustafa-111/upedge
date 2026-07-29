@@ -140,15 +140,17 @@ export function Footer() {
 
           <div className="rounded-[1.5rem] border border-zinc-800 bg-zinc-900 p-6 sm:p-8 dark:border-zinc-300 dark:bg-white">
             <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-white dark:text-zinc-950">
                   Service Coverage
                 </h3>
-                <p className="mt-4 text-sm leading-7 text-zinc-300 dark:text-zinc-700">
+                <p className="mt-4 max-w-full break-words text-sm leading-7 text-zinc-300 dark:text-zinc-700">
                   Serving {SERVICE_AREAS.join(", ")} and nearby areas with tailored recommendations for security, networking, access control, and retail software systems.
                 </p>
               </div>
-              <BrandStrip variant="compact" showTitle={true} />
+              <div className="min-w-0 overflow-hidden">
+                <BrandStrip variant="compact" showTitle={true} />
+              </div>
             </div>
           </div>
 

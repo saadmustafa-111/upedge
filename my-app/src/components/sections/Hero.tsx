@@ -16,6 +16,11 @@ const trustPoints = [
   "Manufacturer-standard installations · Reliable support",
 ];
 
+const mobileTrustPoints = [
+  "10+ years experience · 500+ projects",
+  "CCTV, networking, and access control",
+];
+
 const RevealText = ({
   children,
   delay = 0,
@@ -109,9 +114,9 @@ export function Hero() {
       <div className="scanline" />
       <Header />
 
-      <div className="relative z-10 container mx-auto flex min-h-[calc(100svh-5rem)] px-4 pb-12 pt-32 sm:px-6 sm:pb-16 sm:pt-32 md:pt-36 lg:items-center lg:py-28">
+      <div className="relative z-10 container mx-auto flex min-h-[calc(100svh-5rem)] px-4 pb-10 pt-28 sm:px-6 sm:pb-16 sm:pt-32 md:pt-36 lg:items-center lg:py-28">
         <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="relative z-10 space-y-6 text-center sm:space-y-8">
+            <div className="relative z-10 space-y-4 text-center sm:space-y-8">
               <motion.div
                 initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -30, filter: "blur(8px)" }}
                 animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, x: 0, filter: "blur(0px)" }}
@@ -123,15 +128,16 @@ export function Hero() {
               >
                 <Badge
                   variant="outline"
-                  className="inline-flex max-w-full items-center gap-2 rounded-full border border-border bg-white/88 px-4 py-2 text-center text-[0.95rem] font-medium text-zinc-950 shadow-sm backdrop-blur-[2px] dark:bg-zinc-950/88 dark:text-white sm:text-base"
+                  className="inline-flex max-w-full items-center gap-2 rounded-full border border-border bg-white/88 px-3 py-1.5 text-center text-[0.78rem] font-medium text-zinc-950 shadow-sm backdrop-blur-[2px] dark:bg-zinc-950/88 dark:text-white sm:px-4 sm:py-2 sm:text-base"
                 >
-                  Security · Surveillance · Networking · Access Control
+                  <span className="sm:hidden">CCTV · Networking · Access Control</span>
+                  <span className="hidden sm:inline">Security · Surveillance · Networking · Access Control</span>
                 </Badge>
               </motion.div>
 
-              <div className="space-y-2 sm:space-y-3">
+              <div className="space-y-1.5 sm:space-y-3">
                 <RevealText delay={0.4}>
-                  <h1 className="headline-display tracking-tight">
+                  <h1 className="text-[3rem] leading-[0.98] tracking-tight sm:headline-display">
                     <span className="text-zinc-950 dark:text-white">
                       <span className="font-normal">Complete</span>{" "}
                       <span className="font-bold">Solutions</span>{" "}
@@ -141,7 +147,7 @@ export function Hero() {
                 </RevealText>
 
                 <RevealText delay={0.6}>
-                  <h1 className="headline-display tracking-tight">
+                  <h1 className="text-[3rem] leading-[0.98] tracking-tight sm:headline-display">
                     <span className="text-zinc-950 dark:text-white">
                       <span className="font-bold">Security</span>{" "}
                       <span className="font-normal">&</span>{" "}
@@ -159,15 +165,25 @@ export function Hero() {
                   delay: 0.9,
                   ease: "easeOut",
                 }}
-                className="mx-auto max-w-[42rem] text-[1.05rem] leading-[1.7] text-zinc-700 dark:text-zinc-300 sm:text-base md:text-lg"
+                className="mx-auto max-w-[42rem] text-[0.9rem] leading-[1.5] text-zinc-700 dark:text-zinc-300 sm:text-base sm:leading-[1.7] md:text-lg"
               >
-                UpEdge Technologies delivers expert CCTV, surveillance, networking, and access control solutions.
-                Backed by over 10 years of experience and 500+ successful projects—we focus on reliable installation,
-                cost-effective planning, and dependable support.
+                <span className="sm:hidden">
+                  Expert CCTV, networking, and access control solutions with reliable installation and support.
+                </span>
+                <span className="hidden sm:inline">
+                  UpEdge Technologies delivers expert CCTV, surveillance, networking, and access control solutions.
+                  Backed by over 10 years of experience and 500+ successful projects—we focus on reliable installation,
+                  cost-effective planning, and dependable support.
+                </span>
               </motion.p>
 
               <div className="mx-auto max-w-3xl text-left">
-                <StaggerList items={trustPoints} delay={1.1} />
+                <div className="sm:hidden">
+                  <StaggerList items={mobileTrustPoints} delay={1.1} />
+                </div>
+                <div className="hidden sm:block">
+                  <StaggerList items={trustPoints} delay={1.1} />
+                </div>
               </div>
 
               <motion.div
@@ -178,13 +194,13 @@ export function Hero() {
                   delay: 1.5,
                   ease: "easeOut",
                 }}
-                className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center"
+                className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-3"
               >
                 <Button
                   onClick={handleScrollToContact}
                   size="lg"
                   className={cn(
-                    "h-12 w-full rounded-[0.9rem] bg-primary px-6 text-sm text-primary-foreground sm:w-auto md:px-7 md:text-base",
+                    "h-11 w-full rounded-[0.9rem] bg-primary px-5 text-sm text-primary-foreground sm:h-12 sm:w-auto sm:px-6 md:px-7 md:text-base",
                     "group transition-all duration-300"
                   )}
                 >
@@ -196,7 +212,7 @@ export function Hero() {
                   variant="outline"
                   size="lg"
                   className={cn(
-                    "h-12 w-full rounded-[0.9rem] border border-border bg-background px-6 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-muted dark:bg-zinc-950 dark:text-white dark:hover:bg-zinc-900 sm:w-auto md:px-7 md:text-base"
+                    "h-11 w-full rounded-[0.9rem] border border-border bg-background px-5 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-muted dark:bg-zinc-950 dark:text-white dark:hover:bg-zinc-900 sm:h-12 sm:w-auto sm:px-6 md:px-7 md:text-base"
                   )}
                   asChild
                 >
@@ -218,7 +234,8 @@ export function Hero() {
               >
                 <div className="hidden h-px flex-1 bg-border sm:block" />
                 <span className="px-1 text-center font-medium sm:px-2">
-                  Fast turnaround • Transparent recommendations • No unnecessary upsell
+                  <span className="sm:hidden">Fast turnaround • Clear pricing</span>
+                  <span className="hidden sm:inline">Fast turnaround • Transparent recommendations • No unnecessary upsell</span>
                 </span>
                 <div className="hidden h-px flex-1 bg-border sm:block" />
               </motion.div>

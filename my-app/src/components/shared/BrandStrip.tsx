@@ -25,7 +25,7 @@ export function BrandStrip({ variant = "default", showTitle = true }: BrandStrip
   const isCompact = variant === "compact";
 
   return (
-    <div className={cn("w-full", isCompact ? "py-6 sm:py-8" : "")}>
+    <div className={cn("w-full min-w-0 overflow-hidden", isCompact ? "py-6 sm:py-8" : "")}>
       {showTitle && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -99,7 +99,7 @@ export function BrandStrip({ variant = "default", showTitle = true }: BrandStrip
       </div>
 
       {/* Mobile Slider */}
-      <div className="md:hidden">
+      <div className="min-w-0 md:hidden">
         <MobileSlider
           items={brands.map((brand, idx) => (
             <motion.div
@@ -111,7 +111,7 @@ export function BrandStrip({ variant = "default", showTitle = true }: BrandStrip
                 duration: shouldReduceMotion ? 0.3 : 0.5,
                 delay: shouldReduceMotion ? 0 : idx * 0.05,
               }}
-              className="group flex flex-col items-center justify-center gap-3 px-4"
+              className="group flex min-w-0 flex-col items-center justify-center gap-3 px-4"
             >
               <div
                 className={cn(
